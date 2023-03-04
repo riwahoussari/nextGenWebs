@@ -1,0 +1,185 @@
+.hero ::selection{
+    background-color: var(--turquoise);
+    color: white;
+}
+.hero{
+    min-height: 100vh;
+    color: var(--font-color);
+
+    display: flex;
+    align-items: center;
+}.heroContent{
+    display: flex;
+    flex-direction: column;
+    width: max(40vw , 800px);
+    z-index: 2;
+    margin-left: 5vw;
+}.headline{
+    font-weight: 700;
+    font-size: max(3.75vw,75px);
+}.turquoiseText{
+    font-weight: 900;
+    display: block;
+    color: var(--turquoise);
+}.boldText{
+    font-weight: 900;
+}.heroP{
+    font-size: max(1.5vw,30px);
+    font-weight: 700;
+    margin: max(1.5vw,30px) 0;
+    opacity: 0.8;
+}.heroBtn{
+    font-size: max(1.75vw , 35px);
+    font-weight: 700;
+    letter-spacing: max(0.15vw,3px);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: max(0.5vw,10px) max(1vw,20px);
+    color: var(--theme-color);
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+    border: none;
+    align-self: start;
+    display: block;
+}.heroBtn::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--font-color);
+    z-index: -2;
+}
+.heroBtn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: var(--turquoise);
+    transform: scaleX(0);
+    transform-origin: 0;
+    transition: transform 0.3s ease-in-out;
+}.heroBtn:hover , .heroBtn:focus-visible{
+    color: var(--white);
+}.heroBtn:hover::before , .heroBtn:focus-visible::before{
+    transform: scaleX(100%);
+}
+
+/* DESIGN */
+.hero{
+    position: relative;
+    overflow: hidden;
+    background-color: var(--purple);
+    z-index: 0;
+}
+.heroContainer{
+    width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    transform: rotate(10deg);
+    position: absolute;
+    top: -50px;
+    right: 0;
+    z-index: 1;
+}
+.heroCard{
+    width: 400px;
+    height: 240px;
+    background-color: white;
+    box-shadow: 0px 0px 20px black;
+    margin: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}.heroCard::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background-color: var(--purple);
+    opacity: 0.7;
+    z-index: 0;
+}
+.heroShift {
+    transform: translateX(-80px);
+}
+.heroCard:hover{
+    transform: scale(1.1);
+}
+.heroShift:hover{
+    transform: translateX(-80px) scale(1.1);
+}
+.heroCard:nth-child(1),.heroCard:nth-child(8){
+    background-image: url(./../cards/purple.png);
+    background-size: cover;
+    background-position: right;
+}.heroCard:nth-child(2){
+    background-image: url(./../cards/palette.png);
+    background-size: cover;
+}.heroCard:nth-child(3),.heroCard:nth-child(9){
+    background-image: url(./../cards/yellowBlue.png);
+    background-size: cover;
+    background-position: right;
+}.heroCard:nth-child(4),.heroCard:nth-child(10){
+    background-image: url(./../cards/yellowBlack.png);
+    background-size: cover;
+    background-position: right;
+}.heroCard:nth-child(5),.heroCard:nth-child(11){
+    background-image: url(./../cards/red.png);
+    background-size: cover;
+}.heroCard:nth-child(6),.heroCard:nth-child(12){
+    background-image: url(./../cards/green.png);
+    background-size: cover;
+    background-position: right;
+}.heroCard:nth-child(7){
+    background-image: url(./../cards/blue.png);
+    background-size: cover;
+}
+
+@media (max-width: 1000px) {
+    .hero{
+        justify-content: center;
+        text-align: center;
+    }
+    .hero a{
+        align-self: center;
+    }.heroContent{
+        margin-left: 0;
+        width: max(90vw , 250px);
+        margin: 0;
+    }.headline{
+        font-size: min(60px,10vw);
+    }.heroP{
+        font-size: min(36px,6vw);
+    }
+    .heroBtn{
+        font-size: min(40px,7vw);
+        padding: 15px 30px ;
+    }
+}
+
+@media (max-width: 576px) {
+    .heroContainer{
+        width: 400px;
+        top: -25px;
+    }.heroCard{
+        width: 200px;
+        height: 120px;
+        border-radius: 5px;
+        margin: 10px;
+        box-shadow: 0px 0px 10px black;
+    }.heroCard::before{
+        border-radius: 5px;
+    }.heroShift{
+        transform: translateX(-40px);
+    }.heroShift:hover{
+        transform: translateX(-40px) scale(1.1);
+    }
+}

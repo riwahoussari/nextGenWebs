@@ -1,0 +1,179 @@
+.portfolio{
+    background-color: var(--theme-color);
+    color: var(--font-color);
+    padding: 35px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}.portfolio>h1{
+    color: var(--purple);
+    margin: 20px 0 0 0;
+}
+.portWebs, .portLogos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}.portWebs>h1, .portLogos>h1{
+    color: var(--turquoise);
+    font-size: 2rem;
+    margin-bottom: 5px ;
+    margin-top: 10px;
+}
+.marquee{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}.marquee::before{
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    right: 0;
+    width: 20px;
+    filter: blur(10px);
+    background-color: var(--shadow-color);
+    opacity: 0.5;
+    z-index: 2;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+}.marquee::after{
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 0;
+    width: 20px;
+    filter: blur(10px);
+    background-color: var(--shadow-color);
+    opacity: 0.5;
+    z-index: 2;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+.portWebsContainer , .portLogosContainer{
+    animation: scrolling 6s linear infinite;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+}.portWebsContainer:hover, .portLogosContainer:hover{
+    animation-play-state: paused;
+}
+.portWebsCard ,.portLogosCard{
+    width: 280px;
+    height: 360px;
+    margin: 15px 25px;
+    flex-shrink: 0;
+    position: relative;
+    background-color: var(--bg-color);
+    box-shadow: 0px 0px 20px var(--bg-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}.portLogosCard{
+    height: 280px;
+}
+.portWebsCard>img, .portLogosCard>img{
+    width: 100%;
+}
+.portWebsCard::before ,.portLogosCard::before{
+    content: "";
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    z-index: 1;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: all 0.3s ease-in-out;
+}.portWebsCard:hover::before,.portLogosCard:hover::before{
+    transform: scaleX(1);
+}.portWebsCard .after ,.portLogosCard .after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--theme-color);
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}.portWebsCard:hover .after,.portLogosCard:hover .after{
+    opacity: 0.7;
+}
+.pwc1::before{
+    content: 'Website Template 1';
+}.pwc2::before{
+    content: 'Restaurant Menu Template';
+}.pwc3::before{
+    content: 'Clothing Shop Template';
+}
+.plc1::before{
+    content: 'Logo for "Next Generation Websites"';
+}.plc2::before{
+    content: 'Logo for "MK" shoes and hoodies shop';
+}
+@keyframes scrolling {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-1650px);
+    }
+}
+@media (max-width: 990px) {
+    .portWebsCard , .portLogosCard{
+        width: 210px;
+        height: 270px;
+        margin: 15px 18px;
+    }.portLogosCard{
+        height: 210px;
+    }.portWebsContainer , .portLogosContainer{
+        animation: scrolling 6s linear infinite;
+    }.portWebsCard::before ,.portLogosCard::before{
+        padding: 5px;
+        font-size: 16px;
+    }
+    @keyframes scrolling {
+        0%{
+            transform: translateX(0);
+        }
+        100%{
+            transform: translateX(-1230px);
+        }
+    }
+}
+@media (max-width: 660px) {
+    .portWebsCard , .portLogosCard{
+        width: 140px;
+        height: 180px;
+        margin: 15px 15px;
+    }.portLogosCard{
+        height: 140px;
+    }.portWebsContainer , .portLogosContainer{
+        animation: scrolling 4s linear infinite;
+    }.portWebsCard::before ,.portLogosCard::before{
+        padding: 5px;
+        font-size: 16px;
+    }
+    @keyframes scrolling {
+        0%{
+            transform: translateX(0);
+        }
+        100%{
+            transform: translateX(-850px);
+        }
+    }
+}

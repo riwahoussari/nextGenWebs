@@ -1,0 +1,104 @@
+.about{
+    /* min-height: 80vh; */
+    font-weight: 700;
+    padding: 35px 0;
+    color: #ccff00;
+
+    background-size: cover;
+    background-position: right;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    position: relative;
+}.lightTheme .about{
+    background-image: url(./../assets/brightRocket.png);
+}.darkTheme .about{
+    background-image: url(./../assets/darkRocket.png);
+}.about::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}.lightTheme .about::before{
+    opacity: 0.75;
+    background-color: #cea5ad;
+}.darkTheme .about::before{
+    opacity: 0.5;
+    background-color: var(--theme-color);
+}
+
+.about>h1{
+    color: var(--purple);
+    margin: 30px 0 50px 0;
+    align-self: center;
+    
+    position: relative;
+    z-index: 2;
+}
+.about p{
+    font-size: max(2vw , 1.7rem);
+    line-height: 3rem;
+    width: max(40%, 600px);
+    margin-left: 100px;
+}.about p>.gradientText{
+    display: block;
+    font-size: max(3vw,2.55rem);
+    font-weight: bold;
+}
+
+.aboutBtn{
+    position: relative;
+    z-index: 2;
+    padding: 10px 20px;
+    font-size: min(1.7rem,6vw);
+    border: none;
+    margin-top: 10px;
+    margin-left: 100px;
+    box-shadow: 0px 0px 7px var(--mid-gray);
+    background-color: var(--theme-color);
+    color: var(--font-color);
+}
+.aboutBtn::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--font-color);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: 0;
+    transition: transform 0.3s ease-in-out;
+}
+.aboutBtn:hover::before , .aboutBtn:focus-visible::before{
+    transform: scaleX(1);
+}
+.aboutBtn:hover , .aboutBtn:focus-visible{
+    color: var(--opp-font-color);
+} 
+@media (max-width: 1000px) {
+    .about{
+        align-items: center;
+        text-align: center;
+        background-position: center center;
+    }.lightTheme .about{
+        background-image: url(./../assets/brightVerticalRocket.png);
+    }.darkTheme .about{
+        background-image: url(./../assets/darkVerticalRocket.png);
+    }
+    .about p, .aboutBtn{
+        margin-left: 0;
+    }
+    .about p{
+        width: max(80vw , 250px);
+        line-height: max(4.5vw , 2.5rem);
+        font-size: max(3vw , 1.25rem);
+    }
+    .about p>.gradientText{
+        font-size: max(4.5vw , 1.8rem);
+    }
+}
