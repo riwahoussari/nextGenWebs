@@ -20,14 +20,13 @@
     --purple: #7011f5;
     --turquoise: #00E9AF;
     --white: rgb(255, 255, 255);
-    --white-bg: rgb(230,230,230);
-    --light-gray: rgb(200, 200, 200);
+    --light-gray: rgb(230, 230, 230);
     --mid-gray: rgb(35, 35, 35);
     --dark-gray: rgb(15,15,15);
 }
 /* body color */
 .lightTheme{
-    --theme-color: var(--white-bg)
+    --theme-color: var(--white)
 }.darkTheme{
     --theme-color: var(--dark-gray)
 }
@@ -45,15 +44,17 @@
     --font-color: var(--white);
 }
 .lightTheme .services{
-    --prime: var(--white-bg);
-    --font-color: var(--dark-gray);
+    --prime: var(--white);
+    --font-color: black;
 }
 /* portfolio colors */
 .darkTheme .portfolio{
     --bg-color: var(--mid-gray);
+    --font-color: var(--white);
     --shadow-color: black;
 }.lightTheme .portfolio{
     --bg-color: var(--light-gray);
+    --font-color: var(--dark-gray);
     --shadow-color: var(--mid-gray);
 }
 /* about colors */
@@ -64,15 +65,19 @@
 }.lightTheme .about{
     --font-color: black;
     --opp-font-color: var(--white);
-    --theme-color: var(--white-bg);
+    --theme-color: var(--white);
 }
 /* contact colors */
 .darkTheme .contact{
     --font-color: var(--white);
     --theme-color: var(--dark-gray);
+    --input-color: var(--turquoise);
+    --input-color-two: var(--purple);
 }.lightTheme .contact{
     --font-color: var(--dark-gray);
-    --theme-color: var(--white-bg);
+    --theme-color: var(--white);
+    --input-color: var(--purple);
+    --input-color-two: var(--turquoise);
 }
 /* footer colors */
 .darkTheme footer{
@@ -144,3 +149,4 @@ footer a{
         font-size: 1rem;
     }
 }
+

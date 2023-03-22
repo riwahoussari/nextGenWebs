@@ -40,17 +40,24 @@
 }
 .contact .formSec>label{
     margin: 10px 0 5px 0;
-    color: var(--turquoise);
+    color: var(--input-color);
     opacity: 0.7;
 }
 .contact .formSec>input, .contact textarea, #phone{
     font-size: 1.3rem;
     border: none;
-    padding: 5px 10px;
+    padding: 5px 20px;
     width: min(100% , 350px );
+    background-color: transparent;
+    border-radius: 50px;
+    border: 1px solid var(--input-color);
+    color: var(--font-color);
 }.contact input:focus, .contact textarea:focus{
     outline: none;
-    border: none;
+    border: 1px solid var(--input-color-two);
+}.contact textarea{
+    border-radius: 15px;
+    padding: 5px 10px;
 }
 .checkbox{
     display: flex;
@@ -81,14 +88,14 @@ input::-webkit-inner-spin-button {
     margin-top: 10px;
 
     background-color: rgba(0, 0, 0, 0);
-    color: var(--purple);
-    border: 1px solid var(--purple);
-    box-shadow: 0px 0px 5px var(--purple);
+    color: var(--input-color-two);
+    border: 1px solid var(--input-color-two);
+    box-shadow: 0px 0px 5px var(--input-color-two);
     transition: all 0.2s ease-in-out;
 }.contact form button:hover{
-    color: var(--turquoise);
-    border: 1px solid var(--turquoise);
-    box-shadow: 0px 0px 5px var(--turquoise);
+    color: var(--input-color);
+    border: 1px solid var(--input-color);
+    box-shadow: 0px 0px 5px var(--input-color);
 }
 /* info */
 .contactInfo{

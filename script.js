@@ -141,73 +141,49 @@ backOrder.forEach((order)=> {
 //order button functionality
 //1
 const orderLabelOne = document.querySelectorAll('.orderLabelOne')
-const checkOne = document.getElementById('check1')
+const checkOne = document.getElementById('designSrvcBox')
 orderLabelOne.forEach((label)=>{
     label.addEventListener('mouseenter' , ()=>{
         if(checkOne.checked){
             label.removeAttribute('for')
         }else{
-            label.setAttribute('for' , 'check1')
+            label.setAttribute('for' , 'designSrvcBox')
         }
     })
 })
 //2
 const orderLabelTwo = document.querySelectorAll('.orderLabelTwo')
-const checkTwo = document.getElementById('check2')
+const checkTwo = document.getElementById('dvlpSrvcBox')
 orderLabelTwo.forEach((label)=>{
     label.addEventListener('mouseenter' , ()=>{
         if(checkTwo.checked){
             label.removeAttribute('for')
         }else{
-            label.setAttribute('for' , 'check2')
+            label.setAttribute('for' , 'dvlpSrvcBox')
         }
     })
 })
 //3
 const orderLabelThree = document.querySelectorAll('.orderLabelThree')
-const checkThree = document.getElementById('check3')
+const checkThree = document.getElementById('cpwrtSrvcBox')
 orderLabelThree.forEach((label)=>{
     label.addEventListener('mouseenter' , ()=>{
         if(checkThree.checked){
             label.removeAttribute('for')
         }else{
-            label.setAttribute('for' , 'check3')
+            label.setAttribute('for' , 'cpwrtSrvcBox')
         }
     })
 })
-//4
+//6
 const orderLabelFour = document.querySelectorAll('.orderLabelFour')
-const checkFour = document.getElementById('check4')
+const checkFour = document.getElementById('fullBndlBox')
 orderLabelFour.forEach((label)=>{
     label.addEventListener('mouseenter' , ()=>{
         if(checkFour.checked){
             label.removeAttribute('for')
         }else{
-            label.setAttribute('for' , 'check4')
-        }
-    })
-})
-//5
-const orderLabelFive = document.querySelectorAll('.orderLabelFive')
-const checkFive = document.getElementById('check5')
-orderLabelFive.forEach((label)=>{
-    label.addEventListener('mouseenter' , ()=>{
-        if(checkFive.checked){
-            label.removeAttribute('for')
-        }else{
-            label.setAttribute('for' , 'check5')
-        }
-    })
-})
-//6
-const orderLabelSix = document.querySelectorAll('.orderLabelSix')
-const checkSix = document.getElementById('check6')
-orderLabelSix.forEach((label)=>{
-    label.addEventListener('mouseenter' , ()=>{
-        if(checkSix.checked){
-            label.removeAttribute('for')
-        }else{
-            label.setAttribute('for' , 'check6')
+            label.setAttribute('for' , 'fullBndlBox')
         }
     })
 })
@@ -241,7 +217,12 @@ function process(event) {
     info.style.display = "";
     info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
 }
-
+phoneInputField.addEventListener('focus', ()=>{
+    phoneInputField.style.border = '1px solid var(--input-color-two)'
+})
+phoneInputField.addEventListener('focusout', ()=>{
+    phoneInputField.style.border = '1px solid var(--input-color)'
+})
 ///////////////////////////////////////////full doc funcs
 // theme selector
 const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches

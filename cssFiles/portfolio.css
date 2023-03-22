@@ -53,7 +53,7 @@
     border-bottom-right-radius: 100%;
 }
 .portWebsContainer , .portLogosContainer{
-    animation: scrolling 6s linear infinite;
+    animation: scrolling 4s linear infinite;
     width: 80vw;
     display: flex;
     align-items: center;
@@ -68,6 +68,9 @@
     position: relative;
     background-color: var(--bg-color);
     box-shadow: 0px 0px 20px var(--bg-color);
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
 
     display: flex;
     align-items: center;
@@ -80,7 +83,7 @@
 }
 .portWebsCard::before ,.portLogosCard::before{
     content: "";
-    font-size: 16px;
+    font-size: 20px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -89,12 +92,10 @@
     color: white;
     padding: 10px;
     z-index: 1;
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: all 0.3s ease-in-out;
-}.portWebsCard:hover::before,.portLogosCard:hover::before{
-    transform: scaleX(1);
-}.portWebsCard .after ,.portLogosCard .after{
+}.portfolio .pwc3::before{
+    padding: 0;
+}
+.portWebsCard .after ,.portLogosCard .after{
     content: "";
     position: absolute;
     top: 0;
@@ -108,29 +109,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 20px;
-}.portWebsCard:hover .after,.portLogosCard:hover .after{
+    color: var(--font-color);
+    /* font-size: 20px; */
+    font-weight: bold;
+}
+.portWebsCard:hover .after,.portLogosCard:hover .after{
     opacity: 0.7;
 }
 .pwc1::before{
-    content: 'Website Template 1';
-}.pwc2::before{
     content: 'Restaurant Menu Template';
-}.pwc3::before{
+}.pwc2::before{
     content: 'Clothing Shop Template';
 }
-.plc1::before{
-    content: 'Logo for "Next Generation Websites"';
-}.plc2::before{
-    content: 'Logo for "MK" shoes and hoodies shop';
-}
+
 @keyframes scrolling {
     0%{
         transform: translateX(0);
     }
     100%{
-        transform: translateX(-1650px);
+        transform: translateX(-990px);
     }
 }
 @media (max-width: 990px) {
@@ -138,20 +135,21 @@
         width: 210px;
         height: 270px;
         margin: 15px 18px;
+        font-size: 26px;
     }.portLogosCard{
         height: 210px;
     }.portWebsContainer , .portLogosContainer{
-        animation: scrolling 6s linear infinite;
+        animation: scrolling 4470ms linear infinite;
     }.portWebsCard::before ,.portLogosCard::before{
         padding: 5px;
-        font-size: 16px;
+        font-size: 15px;
     }
     @keyframes scrolling {
         0%{
             transform: translateX(0);
         }
         100%{
-            transform: translateX(-1230px);
+            transform: translateX(-738px);
         }
     }
 }
@@ -160,20 +158,21 @@
         width: 140px;
         height: 180px;
         margin: 15px 15px;
+        font-size: 17.5px;
     }.portLogosCard{
         height: 140px;
     }.portWebsContainer , .portLogosContainer{
-        animation: scrolling 4s linear infinite;
+        animation: scrolling 3s linear infinite;
     }.portWebsCard::before ,.portLogosCard::before{
         padding: 5px;
-        font-size: 16px;
+        font-size: 10px;
     }
     @keyframes scrolling {
         0%{
             transform: translateX(0);
         }
         100%{
-            transform: translateX(-850px);
+            transform: translateX(-510px);
         }
     }
 }

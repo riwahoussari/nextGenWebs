@@ -19,7 +19,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 </head>
+<script>
+    let marginValue = window.innerWidth * 3 / 100;
+    var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?49628';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var options = {
+  "enabled":true,
+  "chatButtonSetting":{
+      "backgroundColor":"#4dc247",
+      "ctaText":"",
+      "borderRadius":"100",
+      "marginLeft":"0",
+      "marginBottom": marginValue,
+      "marginRight": marginValue,
+      "position":"right"
+  },
+  "brandSetting":{
+      "brandName":"Next Generation Websites",
+      "brandSubTitle":"",
+      "brandImg":"https://cdn.clare.ai/wati/images/WATI_logo_square_2.png",
+      "welcomeText":"Hi there!\nHow can I help you?",
+      "messageText":"{{page_title}}Hello, I have a question about {{page_link}}",
+      "backgroundColor":"#0a5f54",
+      "ctaText":"Start Chat",
+      "borderRadius":"25",
+      "autoShow":false,
+      "phoneNumber":"96181059119"
+  }
+};
+    s.onload = function() {
+        CreateWhatsappChatWidget(options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
 
+</script>
 <body>
     <!-- header -->
     <header id="header">
@@ -192,44 +229,6 @@
                         <label class="orderLabelThree">ORDER</label>
                     </a>
                 </div>
-            </div>
-            <div class="hidden card">
-                <div class="hoverSection">
-                    <div class="bigHover"></div>
-                    <div class="smallHover"></div>
-                </div>
-                <div class="frontCard">
-                    <div class="flipIcon"></div>
-                    <img src="./assets/monitor.png">
-                    <H3>LOGO DESIGN</H3>
-                    <div class="list">
-                        <p><img src="./assets/check.png" alt="-">Unique</p>
-                        <p><img src="./assets/check.png" alt="-">Eye-Catching</p>
-                        <p><img src="./assets/check.png" alt="-">Reflects your brand</p>
-                        <p><img src="./assets/check.png" alt="-">Memorable</p>
-                        <p><img src="./assets/check.png" alt="-">Recognizable</p>
-                        <p><img src="./assets/check.png" alt="-">Versatile</p>
-                        <p><img src="./assets/check.png" alt="-">Minimal/Advanced</p>
-                    </div>
-                    <h4>Starting Price: 10$</h4>
-                    <a href="#contact">
-                        <label class="orderLabelFour">ORDER</label>
-                    </a>
-                </div>
-                <div class="backCard">
-                    <div class="flipIcon unlocked"></div>
-                    <div class="pContainer">
-                        <p>We’re the logo wizards who’ll</p> <p>make the perfect logo for your</p> <p>brand! Our designs are cool,</p>
-                        <p> slick, and guaranteed to make</p> <p>you standout from the crowd.</p> 
-                        <p>With our eye-catching and</p>
-                        <p>unforgettable styles, you’ll be</p>
-                        <p>sure to make an impact on</p>
-                        <p>your customers.</p>
-                    </div>
-                    <a href="#contact">
-                        <label class="orderLabelFour">ORDER</label>
-                    </a>
-                </div>
             </div>   
             <div class="hidden card goldCard">
                 <div class="frontCard">
@@ -241,22 +240,7 @@
                     </div>
                     <h4>Starting Price: 48$/year</h4>
                     <a href="#contact">
-                        <label class="orderLabelFive">ORDER</label>
-                    </a>
-                </div>
-            </div>
-            <div class="hidden card goldCard goldCardTwo">
-                <div class="frontCard">
-                    <H3>FULL BUNDLE</H3>
-                    <div class="list">
-                        <p><img src="./assets/goldCheck.png" alt="-">Website Design</p>
-                        <p><img src="./assets/goldCheck.png" alt="-">Website Development</p>
-                        <p><img src="./assets/goldCheck.png" alt="-">Wesite Copywriting</p>
-                        <p><img src="./assets/goldCheck.png" alt="-">LOGO DESIGN</p>
-                    </div>
-                    <h4>Starting Price: 48$/year</h4>
-                    <a href="#contact">
-                        <label class="orderLabelSix">ORDER</label>
+                        <label class="orderLabelFour">ORDER</label>
                     </a>
                 </div>
             </div>
@@ -270,154 +254,72 @@
             <div class="marquee">
                 <div class="portWebsContainer">
                     <div class="portWebsCard pwc1">
-                        <img src="./assets/webDes1SS.png">
-                        <a href="./websiteTemplates/webTem1/index.html" target="_blank">
-                            <div class="after">click to view</div>
-                        </a>
-                    </div>
-                    <div class="portWebsCard pwc2">
                         <img src="./assets/foodMenu.png">
                         <a href="./websiteTemplates/foodMenu/index.html" target="_blank">
                             <div class="after">click to view</div>
                         </a>
                     </div>
-                    <div class="portWebsCard pwc3">
+                    <div class="portWebsCard pwc2">
                         <img src="./assets/shop.png">
                         <a href="./websiteTemplates/shop/index.html" target="_blank">
                             <div class="after">click to view</div>
                         </a>
                     </div>
-                    <div class="portWebsCard">
-                        <div class="after">click to view</div>
-                    </div>
-                    <div class="portWebsCard">
-                        <div class="after">click to view</div>
+                    <div class="portWebsCard pwc3">
+                        More Designs Coming Soon
                     </div>
                     <!-- duplicate 1 -->
                     <div class="portWebsCard pwc1">
-                        <img src="./assets/webDes1SS.png">
-                        <a href="./websiteTemplates/webTem1/index.html" target="_blank">
-                            <div class="after">click to view</div>
-                        </a>
-                    </div>
-                    <div class="portWebsCard pwc2">
                         <img src="./assets/foodMenu.png">
                         <a href="./websiteTemplates/foodMenu/index.html" target="_blank">
                             <div class="after">click to view</div>
                         </a>
                     </div>
-                    <div class="portWebsCard pwc3">
+                    <div class="portWebsCard pwc2">
                         <img src="./assets/shop.png">
                         <a href="./websiteTemplates/shop/index.html" target="_blank">
                             <div class="after">click to view</div>
                         </a>
                     </div>
-                    <div class="portWebsCard">
-                        <div class="after">click to view</div>
-                    </div>
-                    <div class="portWebsCard">
-                        <div class="after">click to view</div>
+                    <div class="portWebsCard pwc3">
+                        More Designs Coming Soon
                     </div>
                     <!-- duplicate 2 -->
                     <div class="portWebsCard pwc1">
-                        <img src="./assets/webDes1SS.png">
-                        <a href="./websiteTemplates/webTem1/index.html" target="_blank">
-                            <div class="after">click to view</div>
-                        </a>
-                    </div>
-                    <div class="portWebsCard pwc2">
                         <img src="./assets/foodMenu.png">
                         <a href="./websiteTemplates/foodMenu/index.html" target="_blank">
                             <div class="after">click to view</div>
                         </a>
                     </div>
-                    <div class="portWebsCard pwc3">
+                    <div class="portWebsCard pwc2">
                         <img src="./assets/shop.png">
                         <a href="./websiteTemplates/shop/index.html" target="_blank">
                             <div class="after">click to view</div>
                         </a>
                     </div>
-                    <div class="portWebsCard">
-                        <div class="after">click to view</div>
+                    <div class="portWebsCard pwc3">
+                        More Designs Coming Soon
                     </div>
-                    <div class="portWebsCard">
-                        <div class="after">click to view</div>
+                    <!-- duplicate 3 -->
+                    <div class="portWebsCard pwc1">
+                        <img src="./assets/foodMenu.png">
+                        <a href="./websiteTemplates/foodMenu/index.html" target="_blank">
+                            <div class="after">click to view</div>
+                        </a>
+                    </div>
+                    <div class="portWebsCard pwc2">
+                        <img src="./assets/shop.png">
+                        <a href="./websiteTemplates/shop/index.html" target="_blank">
+                            <div class="after">click to view</div>
+                        </a>
+                    </div>
+                    <div class="portWebsCard pwc3">
+                        More Designs Coming Soon
                     </div>
                 </div>
             </div>
         </div>
-        <div class="portLogos">
-            <h1>Logos</h1>
-            <div class="marquee">
-                <div class="portLogosContainer">
-                    <div class="portLogosCard plc1">
-                        <img src="./assets/Wlogo.png">
-                        <a href="./assets/Wlogo.png" target="_blank">
-                            <div class="after">click to view</div>
-                        </a>
-                    </div>
-                    <div class="portLogosCard plc2">
-                        <img src="./assets/MKlogo.png">
-                        <a href="./assets/MKlogo.png" target="_blank">
-                            <div class="after">click to view</div>
-                        </a>
-                    </div>
-                    <div class="portLogosCard">
-                        <div class="after">click to view</div>
-                    </div>
-                    <div class="portLogosCard">
-                        <div class="after">click to view</div>
-                    </div>
-                    <div class="portLogosCard">
-                        <div class="after">click to view</div>
-                    </div>
-                    <!-- duplicate 1 -->
-                    <div class="portLogosCard plc1">
-                        <img src="./assets/Wlogo.png">
-                        <a href="./assets/Wlogo.png" target="_blank">
-                            <div class="after">click to view</div>
-                        </a>
-                    </div>
-                    <div class="portLogosCard plc2">
-                        <img src="./assets/MKlogo.png">
-                        <a href="./assets/MKlogo.png" target="_blank">
-                            <div class="after">click to view</div>
-                        </a>
-                    </div>
-                    <div class="portLogosCard">
-                        <div class="after">click to view</div>
-                    </div>
-                    <div class="portLogosCard">
-                        <div class="after">click to view</div>
-                    </div>
-                    <div class="portLogosCard">
-                        <div class="after">click to view</div>
-                    </div>
-                    <!-- duplicate 2 -->
-                    <div class="portLogosCard plc1">
-                        <img src="./assets/Wlogo.png">
-                        <a href="./assets/Wlogo.png" target="_blank">
-                            <div class="after">click to view</div>
-                        </a>
-                    </div>
-                    <div class="portLogosCard plc2">
-                        <img src="./assets/MKlogo.png">
-                        <a href="./assets/MKlogo.png" target="_blank">
-                            <div class="after">click to view</div>
-                        </a>
-                    </div>
-                    <div class="portLogosCard">
-                        <div class="after">click to view</div>
-                    </div>
-                    <div class="portLogosCard">
-                        <div class="after">click to view</div>
-                    </div>
-                    <div class="portLogosCard">
-                        <div class="after">click to view</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
     <!-- about -->
     <div class="about" id="about">
@@ -440,33 +342,23 @@
                     <label>I'm intersted in:</label>
                     <!-- checkbox 1 -->
                     <div class="checkbox">
-                        <input type="checkbox" id="check1" name="check1">
-                        <label for="check1">Website designing service</label>
+                        <input type="checkbox" id="designSrvcBox" name="designSrvcBox">
+                        <label for="designSrvcBox">Website designing service</label>
                     </div>
                     <!-- checkbox 2 -->
                     <div class="checkbox">
-                        <input type="checkbox" id="check2" name="check2">
-                        <label for="check2">Website Development service</label>
+                        <input type="checkbox" id="dvlpSrvcBox" name="dvlpSrvcBox">
+                        <label for="dvlpSrvcBox">Website Development service</label>
                     </div>
                     <!-- checkbox 3 -->
                     <div class="checkbox">
-                        <input type="checkbox" id="check3" name="check3">
-                        <label for="check3">Website copywriting service</label>
+                        <input type="checkbox" id="cpwrtSrvcBox" name="cpwrtSrvcBox">
+                        <label for="cpwrtSrvcBox">Website copywriting service</label>
                     </div>
                     <!-- checkbox 4 -->
                     <div class="checkbox">
-                        <input type="checkbox" id="check4" name="check4">
-                        <label for="check4">Logo Designing service</label>
-                    </div>
-                    <!-- checkbox 5 -->
-                    <div class="checkbox">
-                        <input type="checkbox" id="check5" name="check5">
-                        <label for="check5">Full Website Bundle</label>
-                    </div>
-                    <!-- checkbox 6 -->
-                    <div class="checkbox">
-                        <input type="checkbox" id="check6" name="check6">
-                        <label for="check6">Full Bundle</label>
+                        <input type="checkbox" id="fullBndlBox" name="fullBndlBox">
+                        <label for="fullBndlBox">Full Website Bundle</label>
                     </div>
                     <!-- message -->
                     <label for="message">Leave a message</label>
@@ -495,7 +387,7 @@
         </form>
         <div class="contactInfo">
             <p><img src="./assets/emailIcon.png">nextgenwebcom@gmail.com</p>
-            <p><img src="./assets/phoneIcon.png">+961 81 059 119</p>
+            <p><img src="./assets/phoneIcon.png"><a href="https://api.whatsapp.com/send?phone=96103283803&text=This%20is%20a%20test" target="_blank">+961 81 059 119</a></p>
             <p><img src="./assets/igIcon.png"><a href="https://www.instagram.com/nextgenwebco/"
                     target="_blank">@nextgenwebco</a></p>
         </div>
