@@ -61,14 +61,16 @@ header .themeButton{
     filter: invert(100%);
 }
 .burgerMenu{
-    width: 30px;
+    width: 50px;
+    padding: 14px 10px;
     position: fixed;
-    top: 20px;
-    left: 26px;
+    top: 1px;
+    left: 0px;
     display: none;
     transition: opacity 0.3s ease-in-out;
 }.burgerMenu:hover{
     opacity: 0.7;
+    /* background-color: red; */
 }
 
 #header>.hideNav{
@@ -81,7 +83,7 @@ header .themeButton{
     header{
         width: unset;
         padding: 0;
-        padding-top: 80px ;
+        padding-top: 50px ;
     }
     header .nav{
         flex-direction: column;
