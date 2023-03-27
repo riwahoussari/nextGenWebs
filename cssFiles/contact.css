@@ -115,7 +115,7 @@ input::-webkit-inner-spin-button {
 .contactInfo p{
     display: flex;
     align-items: center;
-    margin: 20px;
+    margin: 10px;
 }.contactInfo a{
     color: unset;
 }.contact a:hover{
@@ -130,6 +130,8 @@ input::-webkit-inner-spin-button {
         align-items: center;
     }.contact form button{
         margin-top: 15px;
+    }.contactInfo {
+        margin-top: 30px;
     }
 }@media (max-width: 500px){
     label , .contact .formSec>input , 

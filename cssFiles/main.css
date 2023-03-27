@@ -40,7 +40,7 @@
 }
 /* services colors */
 .darkTheme .services{
-    --prime:var(--mid-gray);
+    --prime: var(--mid-gray);
     --font-color: var(--white);
 }
 .lightTheme .services{
@@ -143,6 +143,13 @@ footer a{
     color: var(--purple);
 }footer a:hover, footer a:active{
     color: var(--turquoise);
+}
+@media (max-width: 923px) {
+    footer img{
+        margin: 10px;
+    }footer p{
+        margin-top: 5px;
+    }
 }
 @media(max-width: 425px){
     footer{
