@@ -40,7 +40,7 @@ header .nav{
     color: var(--turquoise)
 }
 header .themeButton{
-    width: max(20px, 1.5vw);
+    width: max(25px, 1.5vw);
     aspect-ratio: 1;
     border: none;
     border-radius: 100%;
@@ -101,8 +101,8 @@ header .themeButton{
     }
     header .themeButton{
         position: fixed;
-        top: 20px;
-        right: 20px;
+        top: 15px;
+        right: 10px;
     }
     .burgerMenu{
         display: unset;
