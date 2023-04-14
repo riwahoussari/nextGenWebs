@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
-
 *,
 *::before,
 *::after{
@@ -23,6 +22,7 @@
     --light-gray: rgb(230, 230, 230);
     --mid-gray: rgb(35, 35, 35);
     --dark-gray: rgb(15,15,15);
+    --black: black;
 }
 /* body color */
 .lightTheme{
@@ -32,10 +32,12 @@
 }
 /* hero colors */
 .darkTheme .hero{
-    --font-color: var(--dark-gray);
+    --font-color: var(--black);
+    --p-font-color: var(--drak-gray);
     --theme-color: var(--white);
 }.lightTheme .hero{
     --font-color: var(--white);
+    --p-font-color: rgb(220,220,220);
     --theme-color: var(--dark-gray);
 }
 /* services colors */
@@ -87,19 +89,15 @@
     --bg-color: white;
     --color: black;
 }
-
 /* body */
 body{
     background-color: var(--theme-color);
 }
-
-
 .gradientText{
     background: linear-gradient(-90deg,var(--turquoise) , var(--purple));
     -webkit-background-clip: text;
     color:rgba(0, 0, 0, 0);
 }
-
 /* scroll animation */
 .hidden{
     opacity: 0;
@@ -112,13 +110,10 @@ body{
     filter: blur(0);
     transform: translateX(0);
 }
-
 /* footer */
-
 footer{
     background-color: var(--bg-color);
     color: var(--color);
-    width: 100%;
     text-align: center;
     font-size: 1.2rem;
     padding: 15px;
@@ -156,4 +151,3 @@ footer a{
         font-size: 1rem;
     }
 }
-
