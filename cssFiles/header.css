@@ -11,6 +11,9 @@ header{
     position: fixed;
     z-index: 5;
 }
+#headerLogo{
+    height: 25px;
+}
 header .nav{
     list-style: none;
     display: flex;
@@ -24,7 +27,14 @@ header .nav{
    
     position: relative;
     transition: color 0.3s ease-in-out
-}.nav a::before{
+}#heroLink{
+    padding: 0;
+    margin-right: 20px;
+}
+#heroLink::before{
+    background-color: transparent;
+}
+.nav a::before{
     position: absolute;
     content: "";
     bottom: 0;
@@ -70,7 +80,6 @@ header .themeButton{
     transition: opacity 0.3s ease-in-out;
 }.burgerMenu:hover{
     opacity: 0.7;
-    /* background-color: red; */
 }
 
 #header>.hideNav{
@@ -93,11 +102,19 @@ header .themeButton{
         padding: 10px ;
         width: 100%;
     }
+    #heroLink{
+        padding-left: 10px;
+    }#heroLink::before{
+        background-color: var(--turquoise);
+    }
     .nav a::before{
         left: unset;
         height: unset;
         top: 0;
         width: 3px;
+        transform: scaleY(0) ;
+    }.nav a:hover::before , .nav a:focus::before, .nav .focus::before{
+        transform: scaleY(1);
     }
     header .themeButton{
         position: fixed;

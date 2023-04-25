@@ -24,51 +24,52 @@
 }.boldText{
     font-weight: 900;
 }.heroP{
+    color: var(--p-font-color);
     font-size: max(1.5vw,30px);
     font-weight: 700;
     margin: max(1.5vw,30px) 0;
-    opacity: 0.8;
-}.heroBtn{
+}
+
+.heroBtn{
     font-size: max(1.75vw , 35px);
     font-weight: 700;
     letter-spacing: max(0.15vw,3px);
     text-transform: uppercase;
     text-decoration: none;
+
     padding: max(0.5vw,10px) max(1vw,20px);
-    color: var(--theme-color);
-    background-color: rgba(0, 0, 0, 0);
     position: relative;
-    border: none;
     align-self: start;
     display: block;
-}.heroBtn::after{
-    position: absolute;
-    content: '';
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: var(--font-color);
-    z-index: -2;
+
+    color: var(--turquoise);
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid var(--turquoise);
+    border-radius: 5px;
 }
-.heroBtn::before{
+.heroBtn::after{
     content: '';
     position: absolute;
     top: 0;
+    bottom: 0;
     right: 0;
     left: 0;
-    bottom: 0;
-    z-index: -1;
     background-color: var(--turquoise);
+    z-index: -1;
     transform: scaleX(0);
     transform-origin: 0;
-    transition: transform 0.3s ease-in-out;
-}.heroBtn:hover , .heroBtn:focus-visible{
+    transition: transform 300ms ease-in-out
+}.heroBtn:hover, .heroBtn:focus{
     color: var(--white);
-}.heroBtn:hover::before , .heroBtn:focus-visible::before{
-    transform: scaleX(100%);
+    transition: color 150ms ease-in-out;
 }
-
+.heroBtn:hover::after, .heroBtn:focus::after{
+    transform: scale(1);
+}
+.heroBtn:focus-visible{
+    outline: 2px solid var(--turquoise);
+    outline-offset: 2px;
+}
 /* DESIGN */
 .hero{
     position: relative;
@@ -155,13 +156,13 @@
         width: max(90vw , 250px);
         margin: 0;
     }.headline{
-        font-size: min(60px,10vw);
+        font-size: min(3.75rem,10vw);
     }.heroP{
-        font-size: min(36px,6vw);
+        font-size: min(2.25rem,6vw);
     }
     .heroBtn{
-        font-size: min(40px,7vw);
-        padding: 15px 30px ;
+        font-size: min(2.2rem,6vw);
+        padding: max(0.5vw,10px) max(1vw,20px);
     }
 }
 

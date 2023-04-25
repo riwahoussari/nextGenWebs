@@ -44,10 +44,12 @@
 .darkTheme .services{
     --prime: var(--mid-gray);
     --font-color: var(--white);
+    background-image: url(./../assets/dgDark.png);
 }
 .lightTheme .services{
     --prime: var(--white);
     --font-color: black;
+    background-image: url(./../assets/dgLight.png);
 }
 /* portfolio colors */
 .darkTheme .portfolio{
@@ -62,10 +64,12 @@
 /* about colors */
 .darkTheme .about{
     --font-color: var(--white);
+    --font-color-op: rgba(255, 255, 255, 0.2);
     --opp-font-color: var(--dark-gray);
     --theme-color: var(--dark-gray);
 }.lightTheme .about{
     --font-color: black;
+    --font-color-op: rgba(0, 0, 0, 0.2);
     --opp-font-color: var(--white);
     --theme-color: var(--white);
 }
@@ -93,10 +97,14 @@
 body{
     background-color: var(--theme-color);
 }
+.block{
+    display: block;
+}
 .gradientText{
     background: linear-gradient(-90deg,var(--turquoise) , var(--purple));
     -webkit-background-clip: text;
     color:rgba(0, 0, 0, 0);
+    padding: 3px 0;
 }
 /* scroll animation */
 .hidden{
