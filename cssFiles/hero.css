@@ -59,11 +59,11 @@
     transform: scaleX(0);
     transform-origin: 0;
     transition: transform 300ms ease-in-out
-} .heroBtn:focus-visible{
+} .heroBtn:hover , .heroBtn:focus-visible{
     color: var(--white);
     transition: color 150ms ease-in-out;
 }
- .heroBtn:focus-visible::after{
+ .heroBtn:hover::after , .heroBtn:focus-visible::after{
     transform: scale(1);
 }
 .heroBtn:focus-visible{
@@ -111,12 +111,12 @@
 .heroShift {
     transform: translateX(-80px);
 }
-.heroCard:hover{
+/* .heroCard:hover{
     transform: scale(1.1);
 }
 .heroShift:hover{
     transform: translateX(-80px) scale(1.1);
-}
+} */
 .heroCard:nth-child(1),.heroCard:nth-child(8){
     background-image: url(./../cards/purple.png);
     background-size: cover;
@@ -180,7 +180,8 @@
         border-radius: 5px;
     }.heroShift{
         transform: translateX(-40px);
-    }.heroShift:hover{
-        transform: translateX(-40px) scale(1.1);
     }
+    /* .heroShift:hover{
+        transform: translateX(-40px) scale(1.1);
+    } */
 }
