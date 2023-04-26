@@ -316,3 +316,7 @@ window.addEventListener('scroll' , linkFocusOnScroll)
 linkFocusOnScroll()
 
 
+herobtn = document.querySelector('.heroBtn')
+herobtn.addEventListener('click' , ()=>{
+    herobtn.blur()
+})
