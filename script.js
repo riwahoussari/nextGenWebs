@@ -317,6 +317,9 @@ linkFocusOnScroll()
 
 
 herobtn = document.querySelector('.heroBtn')
-herobtn.addEventListener('click' , ()=>{
-    herobtn.blur()
+herobtn.addEventListener('mouseenter' , ()=>{
+    herobtn.classList.add('hover')
+})
+herobtn.addEventListener('mouseleave' , ()=>{
+    herobtn.classList.remove('hover')
 })

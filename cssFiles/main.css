@@ -147,6 +147,11 @@ footer a{
 }footer a:hover, footer a:active{
     color: var(--turquoise);
 }
+.darkTheme .lightNameLogo{
+    display: none;
+}.lightTheme .darkNameLogo{
+    display: none;
+}
 @media (max-width: 923px) {
     footer img{
         margin: 10px;
