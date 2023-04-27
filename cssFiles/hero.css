@@ -16,7 +16,7 @@
     margin-left: 5vw;
 }.headline{
     font-weight: 700;
-    font-size: max(3.75vw,75px);
+    font-size: min(4vw, 4.5rem);
 }.turquoiseText{
     font-weight: 900;
     display: block;
@@ -25,13 +25,13 @@
     font-weight: 900;
 }.heroP{
     color: var(--p-font-color);
-    font-size: max(1.5vw,30px);
+    font-size: min(3vw,2rem);
     font-weight: 700;
-    margin: max(1.5vw,30px) 0;
+    margin: min(1vw,1rem) 0 min(1.5vw,1.5rem) 0;
 }
 
 .heroBtn{
-    font-size: max(1.75vw , 35px);
+    font-size: min(3vw , 2rem);
     font-weight: 700;
     letter-spacing: max(0.15vw,3px);
     text-transform: uppercase;

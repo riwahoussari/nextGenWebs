@@ -316,12 +316,13 @@ window.addEventListener('scroll' , linkFocusOnScroll)
 linkFocusOnScroll()
 ///////////////////////////////////////////portfolio funcs
 let isTouch = false;
-window.addEventListener('touchstart' , ()=>{
-    isTouch = true;
-})
 window.addEventListener('mousemove' , ()=>{
     isTouch = false;
 })
+window.addEventListener('touchstart' , ()=>{
+    isTouch = true;
+})
+
 //click to pause and unpause
 let clickToPause = document.querySelector('.clickToPause')
 let portWebsCont = document.querySelector('.portWebsContainer')
@@ -333,12 +334,9 @@ clickToPause.addEventListener('click' , ()=>{
         clickToPause.classList.add('turquoise')
         clickToPause.classList.remove('purple')
         console.log(isTouch)
-        if(isTouch){
-            alert('is touch')
-            portCards.forEach((card) => {
-                card.classList.add('hover')
-            })
-        }
+        portCards.forEach((card) => {
+            card.classList.add('hover')
+        })
     }else{
         clickToPause.textContent = 'Click to Pause'
         clickToPause.classList.add('purple')
