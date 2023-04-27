@@ -152,16 +152,16 @@
     text-decoration: none;
     transition: all 0.1s ease-in-out;
 }.services .container .card .frontCard a{
-    background-color: var(--purple);
+    background-color: var(--turquoise);
 }.services .container .card .backCard a{
-    background-color: var(--turquoise);
-}.services .container .card .frontCard a:hover{
-    background-color: var(--turquoise);
-    box-shadow: inset 0px 0px 5px var(--mid-gray);
-}.services .container .card .backCard a:hover{
+    background-color: var(--purple);
+}.services .container .card .frontCard a.hover{
     background-color: var(--purple);
     box-shadow: inset 0px 0px 5px var(--mid-gray);
-}.lightTheme .services .container .card a:hover{
+}.services .container .card .backCard a.hover{
+    background-color: var(--turquoise);
+    box-shadow: inset 0px 0px 5px var(--mid-gray);
+}.lightTheme .services .container .card a.hover{
     box-shadow: inset 0px 0px 5px rgb(100, 100, 100);
 }
 .services label{
@@ -184,7 +184,7 @@
 .services .container .goldCard .frontCard a{
     background-color: #daa520;
     box-shadow: none;
-}.services .container .goldCard .frontCard a:hover{
+}.services .container .goldCard .frontCard a.hover{
     box-shadow: inset 0px 0px 5px #daa520;
     background-color: white;
     color: #daa520;

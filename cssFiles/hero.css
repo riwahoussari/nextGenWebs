@@ -60,11 +60,11 @@
     transform-origin: 0;
     transition: transform 300ms ease-in-out
 }
-.hero .hover , .heroBtn:focus{
+.heroContent .hover , .heroBtn:focus-visible{
     color: var(--white);
     transition: color 150ms ease-in-out;
 }
-.hero .hover::after , .heroBtn:focus::after{
+.heroContent .hover::after , .heroBtn:focus-visible::after{
     transform: scale(1);
 }
 .heroBtn:focus-visible{
@@ -112,10 +112,10 @@
 .heroShift {
     transform: translateX(-80px);
 }
-.heroCard:hover{
+.heroCard.hover{
     transform: scale(1.1);
 }
-.heroShift:hover{
+.heroShift.hover{
     transform: translateX(-80px) scale(1.1);
 }
 .heroCard:nth-child(1),.heroCard:nth-child(8){
@@ -182,7 +182,7 @@
     }.heroShift{
         transform: translateX(-40px);
     }
-    .heroShift:hover{
+    .heroShift.hover{
         transform: translateX(-40px) scale(1.1);
     }
 }

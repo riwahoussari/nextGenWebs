@@ -320,15 +320,28 @@ window.addEventListener('touchstart' , ()=>{
     isTouch = true;
 })
 
-herobtn = document.querySelector('.heroBtn')
-herobtn.addEventListener('mouseenter' , ()=>{
-    if(!isTouch){
-    herobtn.classList.add('hover')
-    }
-})
-herobtn.addEventListener('mouseleave' , ()=>{
-    if(!isTouch){
-        herobtn.classList.remove('hover')
+let buttons = document.querySelectorAll('.hovers')
+buttons.forEach((button)=>{
+    button.addEventListener('mouseenter' , ()=>{
+        if(!isTouch){
+            button.classList.add('hover')
         }
+    })
+    button.addEventListener('mouseleave' , ()=>{
+        if(!isTouch){
+            button.classList.remove('hover')
+        }
+    })
 })
+// let herobtn = document.querySelector('.heroBtn')
+// herobtn.addEventListener('mouseenter' , ()=>{
+//     if(!isTouch){
+//     herobtn.classList.add('hover')
+//     }
+// })
+// herobtn.addEventListener('mouseleave' , ()=>{
+//     if(!isTouch){
+//         herobtn.classList.remove('hover')
+//         }
+// })
 
