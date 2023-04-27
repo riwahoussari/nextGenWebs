@@ -314,10 +314,35 @@ function linkFocusOnScroll(){
 }
 window.addEventListener('scroll' , linkFocusOnScroll)
 linkFocusOnScroll()
+///////////////////////////////////////////portfolio funcs
+//click to pause and unpause
+let clickToPause = document.querySelector('.clickToPause')
+let portWebsCont = document.querySelector('.portWebsContainer')
+clickToPause.addEventListener('click' , ()=>{
+    portWebsCont.classList.toggle('hover')
+    if(portWebsCont.classList.contains('hover')){
+        clickToPause.textContent = 'Click to Unpause'
+        clickToPause.classList.add('turquoise')
+        clickToPause.classList.remove('purple')
+    }else{
+        clickToPause.textContent = 'Click to Pause'
+        clickToPause.classList.add('purple')
+        clickToPause.classList.remove('turquoise')
+    }
+})
 
+//add hover class for buttons
+//cancel hover for touchscreens
 let isTouch = false;
 window.addEventListener('touchstart' , ()=>{
     isTouch = true;
+    clickToPause.style.display = 'unset'
+    portWebsCont.classList.remove('hovers')
+})
+window.addEventListener('mousemove' , ()=>{
+    isTouch = false;
+    clickToPause.style.display = 'none'
+    portWebsCont.classList.add('hovers')
 })
 
 let buttons = document.querySelectorAll('.hovers')
@@ -333,15 +358,5 @@ buttons.forEach((button)=>{
         }
     })
 })
-// let herobtn = document.querySelector('.heroBtn')
-// herobtn.addEventListener('mouseenter' , ()=>{
-//     if(!isTouch){
-//     herobtn.classList.add('hover')
-//     }
-// })
-// herobtn.addEventListener('mouseleave' , ()=>{
-//     if(!isTouch){
-//         herobtn.classList.remove('hover')
-//         }
-// })
+
 
