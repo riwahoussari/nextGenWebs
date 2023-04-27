@@ -325,7 +325,7 @@ window.addEventListener('mousemove' , ()=>{
 //click to pause and unpause
 let clickToPause = document.querySelector('.clickToPause')
 let portWebsCont = document.querySelector('.portWebsContainer')
-let portCards = document.querySelectorAll('portWebsCard')
+let portCards = document.querySelectorAll('.portWebsCard')
 clickToPause.addEventListener('click' , ()=>{
     portWebsCont.classList.toggle('hover')
     if(portWebsCont.classList.contains('hover')){
