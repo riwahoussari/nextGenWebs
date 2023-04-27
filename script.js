@@ -332,7 +332,8 @@ clickToPause.addEventListener('click' , ()=>{
         clickToPause.textContent = 'Click to Unpause'
         clickToPause.classList.add('turquoise')
         clickToPause.classList.remove('purple')
-        if(true){
+        if(isTouch){
+            alert('is touch')
             portCards.forEach((card) => {
                 card.classList.add('hover')
             })
