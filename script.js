@@ -315,11 +315,20 @@ function linkFocusOnScroll(){
 window.addEventListener('scroll' , linkFocusOnScroll)
 linkFocusOnScroll()
 
+let isTouch = false;
+window.addEventListener('touchstart' , ()=>{
+    isTouch = true;
+})
 
 herobtn = document.querySelector('.heroBtn')
 herobtn.addEventListener('mouseenter' , ()=>{
+    if(!isTouch){
     herobtn.classList.add('hover')
+    }
 })
 herobtn.addEventListener('mouseleave' , ()=>{
-    herobtn.classList.remove('hover')
+    if(!isTouch){
+        herobtn.classList.remove('hover')
+        }
 })
+

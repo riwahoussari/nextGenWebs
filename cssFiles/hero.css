@@ -59,11 +59,12 @@
     transform: scaleX(0);
     transform-origin: 0;
     transition: transform 300ms ease-in-out
-} .hero .hover , .heroBtn:focus-visible{
+}
+.hero .hover , .heroBtn:focus-visible{
     color: var(--white);
     transition: color 150ms ease-in-out;
 }
- .hero .hover::after , .heroBtn:focus-visible::after{
+.hero .hover::after , .heroBtn:focus-visible::after{
     transform: scale(1);
 }
 .heroBtn:focus-visible{
