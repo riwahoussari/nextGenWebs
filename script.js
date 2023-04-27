@@ -315,6 +315,13 @@ function linkFocusOnScroll(){
 window.addEventListener('scroll' , linkFocusOnScroll)
 linkFocusOnScroll()
 ///////////////////////////////////////////portfolio funcs
+let isTouch = false;
+window.addEventListener('touchstart' , ()=>{
+    isTouch = true;
+})
+window.addEventListener('mousemove' , ()=>{
+    isTouch = false;
+})
 //click to pause and unpause
 let clickToPause = document.querySelector('.clickToPause')
 let portWebsCont = document.querySelector('.portWebsContainer')
@@ -342,13 +349,7 @@ clickToPause.addEventListener('click' , ()=>{
 
 //add hover class for buttons
 //cancel hover for touchscreens
-let isTouch = false;
-window.addEventListener('touchstart' , ()=>{
-    isTouch = true;
-})
-window.addEventListener('mousemove' , ()=>{
-    isTouch = false;
-})
+
 
 let buttons = document.querySelectorAll('.hovers')
 buttons.forEach((button)=>{
