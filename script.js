@@ -318,16 +318,25 @@ linkFocusOnScroll()
 //click to pause and unpause
 let clickToPause = document.querySelector('.clickToPause')
 let portWebsCont = document.querySelector('.portWebsContainer')
+let portCards = document.querySelectorAll('portWebsCard')
 clickToPause.addEventListener('click' , ()=>{
     portWebsCont.classList.toggle('hover')
     if(portWebsCont.classList.contains('hover')){
         clickToPause.textContent = 'Click to Unpause'
         clickToPause.classList.add('turquoise')
         clickToPause.classList.remove('purple')
+        if(isTouch){
+            portCards.forEach((card) => {
+                card.classList.add('hover')
+            })
+        }
     }else{
         clickToPause.textContent = 'Click to Pause'
         clickToPause.classList.add('purple')
         clickToPause.classList.remove('turquoise')
+        portCards.forEach((card) => {
+            card.classList.remove('hover')
+        })
     }
 })
 
@@ -336,13 +345,9 @@ clickToPause.addEventListener('click' , ()=>{
 let isTouch = false;
 window.addEventListener('touchstart' , ()=>{
     isTouch = true;
-    clickToPause.style.display = 'unset'
-    portWebsCont.classList.remove('hovers')
 })
 window.addEventListener('mousemove' , ()=>{
     isTouch = false;
-    clickToPause.style.display = 'none'
-    portWebsCont.classList.add('hovers')
 })
 
 let buttons = document.querySelectorAll('.hovers')
