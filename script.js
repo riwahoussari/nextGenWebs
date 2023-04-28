@@ -1,10 +1,11 @@
 let isTouch = false;
 let console = document.getElementById('console')
+
 window.addEventListener('mousemove' , ()=>{
     isTouch = false;
     console.textContent = 'mouse'
 })
-window.addEventListener('touchend' , ()=>{
+window.addEventListener('touchstart' , ()=>{
     isTouch = true;
     console.textContent = 'touch'
 })
