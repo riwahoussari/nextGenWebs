@@ -1,9 +1,12 @@
 let isTouch = false;
+let console = document.getElementById('console')
 window.addEventListener('mousemove' , ()=>{
     isTouch = false;
+    console.textContent = 'mouse'
 })
 window.addEventListener('touchstart' , ()=>{
     isTouch = true;
+    console.textContent = 'touch'
 })
 ///////////////////////////////////////////header funcs
 // navbar display 
@@ -105,12 +108,6 @@ hoverSection.forEach((section)=> {
 })
 
 frontIcon.forEach((icon)=> {
-    window.addEventListener('mousemove' , ()=>{
-        isTouch = false;
-    })
-    window.addEventListener('touchstart' , ()=>{
-        isTouch = true;
-    })
     let backIcon = icon.parentElement.parentElement.querySelector('.backCard .flipIcon')
     icon.addEventListener('click' , ()=>{
         let card = icon.parentElement.parentElement
