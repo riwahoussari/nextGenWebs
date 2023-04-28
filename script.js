@@ -109,7 +109,7 @@ frontIcon.forEach((icon)=> {
     icon.addEventListener('click' , ()=>{
         let card = icon.parentElement.parentElement
         card.classList.add('flipped')
-        if(isTouch){
+        if(!isTouch){
             backIcon.classList.add('touchIcon')
             backIcon.classList.remove('unlocked')
             backIcon.classList.remove('locked')
