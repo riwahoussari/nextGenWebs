@@ -6,10 +6,17 @@
     font-family: 'poppins' , sans-serif;
     scroll-behavior: smooth;
 }
+.modal[selectionColor="rgb(160, 218, 215)"] *::selection{
+    background: rgb(160, 218, 215);
+}.modal[selectionColor="rgb(255, 213, 0)"] *::selection{
+    background: rgb(255, 213, 0);
+}.modal[selectionColor="rgb(125, 109, 162)"] *::selection{
+    background: rgb(125, 109, 162);
+}
 :root{
-    --blue : #a0dad7;
-    --yellow : #ffd500;
-    --purple : #7d6da2;
+    --blue : rgb(160, 218, 215);
+    --yellow : rgb(255, 213, 0);
+    --purple : rgb(125, 109, 162);
     --blue-66 : #a0dad766;
     --yellow-66 : #ffd50066;
     --purple-66 : #7d6da266;
@@ -38,11 +45,20 @@
 }
 .airMax{
     background-color: var(--yellow) ;
-}.air{
+}.airMaxSection *::selection{
+    background: var(--yellow) ;
+}
+.air{
     background-color: var(--blue) ;
-}.yeezy{
+}.airSection *::selection{
+    background: var(--blue);
+}
+.yeezy{
     background-color: var(--purple) ;
-}.airMax:hover h3, .yeezy:hover h3, .air:hover h3{
+}.yeezySection *::selection{
+    background: var(--purple);
+}
+.airMax:hover h3, .yeezy:hover h3, .air:hover h3{
     color: black;
 }
 .hero img{
@@ -67,6 +83,8 @@
 }
 .bigSection{
     width: calc(100% / 3 * 2);
+    overflow: hidden;
+    user-select: none;
 }.bigSection h1{
     font-size: 14.5vw;
     letter-spacing: 1vw;

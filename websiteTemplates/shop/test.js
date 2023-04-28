@@ -214,6 +214,7 @@ function displayModal(button){
     modal.querySelector('h2').textContent = card.querySelector('h2').textContent
     modal.querySelector('.modalPrice').textContent = card.querySelector('.price').textContent
     modal.querySelector('.modalPrice').style.backgroundColor = window.getComputedStyle( card.querySelector('.price') ,null).getPropertyValue('background-color')
+    modal.setAttribute('selectionColor' , window.getComputedStyle( card.querySelector('.price') ,null).getPropertyValue('background-color')) 
     //back button function
     let showLess = modal.querySelector('.showLess')
     showLess.addEventListener('click' , ()=>{

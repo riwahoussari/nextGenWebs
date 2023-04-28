@@ -95,7 +95,6 @@
     z-index: 1;
 }.flipIcon:hover{
     background-color: rgba(0, 0, 0, 0.15);
-    /* background-color: red; */
 }.frontCard .flipIcon{
     background-image: url(./../assets/flipIcon.png);
 }.backCard .locked{
@@ -148,8 +147,8 @@
     border-bottom-right-radius: 15px;
     border: none;
     font-size: 20px;
+    font-weight: 900;
     letter-spacing: 3px;
-    font-weight: bold;
     color: var(--white);
     text-decoration: none;
     transition: all 0.1s ease-in-out;
@@ -157,6 +156,8 @@
     background-color: var(--turquoise);
 }.services .container .card .backCard a{
     background-color: var(--purple);
+}.services .container .card a label{
+    font-family: 'Poppins';
 }
 @media (hover : hover) {
     .services .container .card .frontCard a:hover{
