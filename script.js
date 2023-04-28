@@ -321,7 +321,7 @@ window.addEventListener('mousemove' , ()=>{
     isTouch = false;
     console.textContent = 'mouse'
 })
-window.addEventListener('touchstart' , ()=>{
+window.addEventListener('touchcancel' , ()=>{
     isTouch = true;
     console.textContent = 'touch'
 })
