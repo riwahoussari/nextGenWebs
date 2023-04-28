@@ -316,18 +316,17 @@ window.addEventListener('scroll' , linkFocusOnScroll)
 linkFocusOnScroll()
 ///////////////////////////////////////////portfolio funcs
 
-document.addEventListener('DOMContentLoaded' , ()=>{
-    let isTouch;
-    let console = document.getElementById('console')
-    window.addEventListener('mouseover' , ()=>{
-        isTouch = false;
-        console.textContent = 'mouse'
-    })
-    window.addEventListener('touchmove' , ()=>{
-        isTouch = true;
-        console.textContent = 'touch'
-    })
+let isTouch = null;
+let consolee = document.getElementById('console')
+window.addEventListener('mouseover' , ()=>{
+    isTouch = false;
+    consolee.textContent = 'mouse'
 })
+window.addEventListener('touchmove' , ()=>{
+    isTouch = true;
+    consolee.textContent = 'touch'
+})
+
 
 //click to pause and unpause
 let clickToPause = document.querySelector('.clickToPause')
@@ -360,6 +359,7 @@ clickToPause.addEventListener('click' , ()=>{
 let buttons = document.querySelectorAll('.hovers')
 buttons.forEach((button)=>{
     button.addEventListener('mouseenter' , ()=>{
+        console.log(isTouch)
         if(!isTouch){
             button.classList.add('hover')
         }
