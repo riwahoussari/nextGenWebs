@@ -4,7 +4,7 @@ window.addEventListener('mousemove' , ()=>{
     isTouch = false;
     console.textContent = 'mouse'
 })
-window.addEventListener('touchstart' , ()=>{
+window.addEventListener('touchend' , ()=>{
     isTouch = true;
     console.textContent = 'touch'
 })
