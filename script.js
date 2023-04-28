@@ -315,7 +315,7 @@ function linkFocusOnScroll(){
 window.addEventListener('scroll' , linkFocusOnScroll)
 linkFocusOnScroll()
 ///////////////////////////////////////////portfolio funcs
-let isTouch = false;
+let isTouch = true;
 let console = document.getElementById('console')
 window.addEventListener('mousemove' , ()=>{
     isTouch = false;
