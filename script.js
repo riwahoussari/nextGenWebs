@@ -1,3 +1,10 @@
+let isTouch = false;
+window.addEventListener('mousemove' , ()=>{
+    isTouch = false;
+})
+window.addEventListener('touchstart' , ()=>{
+    isTouch = true;
+})
 ///////////////////////////////////////////header funcs
 // navbar display 
 const burger = document.querySelector('.burgerMenu')
@@ -80,19 +87,19 @@ const backOrder = document.querySelectorAll('.backCard a')
 hoverSection.forEach((section)=> {
     section.addEventListener('mouseenter' , ()=>{
         let card = section.parentElement
-        card.classList.add('flipped')
+        if(!isTouch){
+            card.classList.add('flipped')
+        }
     })
 })
 hoverSection.forEach((section)=> {
     section.addEventListener('mouseleave' , ()=>{
         let card = section.parentElement
         let backIcon = section.parentElement.querySelector('.backCard .flipIcon')
-        if(!isTouch){
-            if(backIcon.classList.contains('unlocked')){
-                card.classList.remove('flipped')
-            }else if(backIcon.classList.contains('locked')){
-                return
-            }
+        if(backIcon.classList.contains('unlocked')){
+            card.classList.remove('flipped')
+        }else if(backIcon.classList.contains('locked')){
+            return
         }
     })
 })
@@ -103,7 +110,6 @@ frontIcon.forEach((icon)=> {
         let card = icon.parentElement.parentElement
         card.classList.add('flipped')
         if(isTouch){
-            console.log(isTouch)
             backIcon.classList.add('touchIcon')
             backIcon.classList.remove('unlocked')
             backIcon.classList.remove('locked')
@@ -336,13 +342,7 @@ function linkFocusOnScroll(){
 window.addEventListener('scroll' , linkFocusOnScroll)
 linkFocusOnScroll()
 ///////////////////////////////////////////portfolio funcs
-let isTouch = false;
-window.addEventListener('mousemove' , ()=>{
-    isTouch = false;
-})
-window.addEventListener('touchstart' , ()=>{
-    isTouch = true;
-})
+
 
 //click to pause and unpause
 let clickToPause = document.querySelector('.clickToPause')
