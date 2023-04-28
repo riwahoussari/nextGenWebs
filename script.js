@@ -316,11 +316,14 @@ window.addEventListener('scroll' , linkFocusOnScroll)
 linkFocusOnScroll()
 ///////////////////////////////////////////portfolio funcs
 let isTouch = false;
+let console = document.getElementById('console')
 window.addEventListener('mousemove' , ()=>{
     isTouch = false;
+    console.textContent = 'mouse'
 })
 window.addEventListener('touchstart' , ()=>{
     isTouch = true;
+    console.textContent = 'touch'
 })
 
 //click to pause and unpause
