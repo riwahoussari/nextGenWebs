@@ -1,14 +1,3 @@
-let isTouch = false;
-let console = document.getElementById('console')
-
-window.addEventListener('mousemove' , ()=>{
-    isTouch = false;
-    console.textContent = 'mouse'
-})
-window.addEventListener('touchstart' , ()=>{
-    isTouch = true;
-    console.textContent = 'touch'
-})
 ///////////////////////////////////////////header funcs
 // navbar display 
 const burger = document.querySelector('.burgerMenu')
@@ -91,9 +80,7 @@ const backOrder = document.querySelectorAll('.backCard a')
 hoverSection.forEach((section)=> {
     section.addEventListener('mouseenter' , ()=>{
         let card = section.parentElement
-        if(!isTouch){
-            card.classList.add('flipped')
-        }
+        card.classList.add('flipped')
     })
 })
 hoverSection.forEach((section)=> {
@@ -102,26 +89,15 @@ hoverSection.forEach((section)=> {
         let backIcon = section.parentElement.querySelector('.backCard .flipIcon')
         if(backIcon.classList.contains('unlocked')){
             card.classList.remove('flipped')
-        }else if(backIcon.classList.contains('locked')){
-            return
-        }
+        }else return
     })
 })
-
 frontIcon.forEach((icon)=> {
     let backIcon = icon.parentElement.parentElement.querySelector('.backCard .flipIcon')
     icon.addEventListener('click' , ()=>{
         let card = icon.parentElement.parentElement
         card.classList.add('flipped')
-        if(!isTouch){
-            backIcon.classList.add('touchIcon')
-            backIcon.classList.remove('unlocked')
-            backIcon.classList.remove('locked')
-        }else{
-            backIcon.classList.add('locked')
-            backIcon.classList.remove('unlocked')
-            backIcon.classList.remove('touchIcon')
-        }
+        backIcon.classList.remove('unlocked')
     })
 })
 backIcon.forEach((icon)=> {
@@ -135,22 +111,15 @@ backIcon.forEach((icon)=> {
         let card = icon.parentElement.parentElement
         if(icon.classList.contains('unlocked')){
             card.classList.remove('flipped')
-        }else if(icon.classList.contains('locked')){
-            return
-        }
+        }else return
     })
 })
 backIcon.forEach((icon)=> {
-    let card = icon.parentElement.parentElement
     icon.addEventListener('click' , ()=>{
         if(icon.classList.contains('unlocked')){
             icon.classList.remove('unlocked')
-            icon.classList.add('locked')
-        }else if(icon.classList.contains('locked')){
+        }else{
             icon.classList.add('unlocked')
-            icon.classList.remove('locked')
-        }else if(icon.classList.contains('touchIcon')){
-            card.classList.remove('flipped')
         }
     })
 })
@@ -346,7 +315,13 @@ function linkFocusOnScroll(){
 window.addEventListener('scroll' , linkFocusOnScroll)
 linkFocusOnScroll()
 ///////////////////////////////////////////portfolio funcs
-
+let isTouch = false;
+window.addEventListener('mousemove' , ()=>{
+    isTouch = false;
+})
+window.addEventListener('touchstart' , ()=>{
+    isTouch = true;
+})
 
 //click to pause and unpause
 let clickToPause = document.querySelector('.clickToPause')
@@ -389,5 +364,3 @@ buttons.forEach((button)=>{
         }
     })
 })
-
-
