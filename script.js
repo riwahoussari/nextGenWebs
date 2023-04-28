@@ -385,16 +385,34 @@ clickToPause.addEventListener('click' , ()=>{
 
 
 let buttons = document.querySelectorAll('.hovers')
+// buttons.forEach((button)=>{
+//     button.addEventListener('mouseenter' , ()=>{
+//         console.log(isTouch)
+//         if(!isTouch){
+//             button.classList.add('hover')
+//         }
+//     })
+//     button.addEventListener('mouseleave' , ()=>{
+//         if(!isTouch){
+//             button.classList.remove('hover')
+//         }
+//     })
+// })
 buttons.forEach((button)=>{
     button.addEventListener('mouseenter' , ()=>{
-        console.log(isTouch)
-        if(!isTouch){
-            button.classList.add('hover')
-        }
+        button.classList.add('hover')
     })
+    button.addEventListener('touchStart' , ()=>{
+        button.classList.add('hover')
+    })
+
     button.addEventListener('mouseleave' , ()=>{
-        if(!isTouch){
-            button.classList.remove('hover')
-        }
+        button.classList.remove('hover')
+    })
+    button.addEventListener('touchcancel' , ()=>{
+        button.classList.remove('hover')
+    })
+    button.addEventListener('touchend' , ()=>{
+        button.classList.remove('hover')
     })
 })
