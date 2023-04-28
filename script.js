@@ -319,7 +319,7 @@ linkFocusOnScroll()
 document.addEventListener('DOMContentLoaded' , ()=>{
     let isTouch;
     let console = document.getElementById('console')
-    window.addEventListener('mouseenter' , ()=>{
+    window.addEventListener('mouseover' , ()=>{
         isTouch = false;
         console.textContent = 'mouse'
     })
