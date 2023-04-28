@@ -87,17 +87,31 @@ hoverSection.forEach((section)=> {
     section.addEventListener('mouseleave' , ()=>{
         let card = section.parentElement
         let backIcon = section.parentElement.querySelector('.backCard .flipIcon')
-        if(backIcon.classList.contains('unlocked')){
-            card.classList.remove('flipped')
-        }else return
+        if(!isTouch){
+            if(backIcon.classList.contains('unlocked')){
+                card.classList.remove('flipped')
+            }else if(backIcon.classList.contains('locked')){
+                return
+            }
+        }
     })
 })
+
 frontIcon.forEach((icon)=> {
     let backIcon = icon.parentElement.parentElement.querySelector('.backCard .flipIcon')
     icon.addEventListener('click' , ()=>{
         let card = icon.parentElement.parentElement
         card.classList.add('flipped')
-        backIcon.classList.remove('unlocked')
+        if(isTouch){
+            console.log(isTouch)
+            backIcon.classList.add('touchIcon')
+            backIcon.classList.remove('unlocked')
+            backIcon.classList.remove('locked')
+        }else{
+            backIcon.classList.add('locked')
+            backIcon.classList.remove('unlocked')
+            backIcon.classList.remove('touchIcon')
+        }
     })
 })
 backIcon.forEach((icon)=> {
@@ -111,15 +125,22 @@ backIcon.forEach((icon)=> {
         let card = icon.parentElement.parentElement
         if(icon.classList.contains('unlocked')){
             card.classList.remove('flipped')
-        }else return
+        }else if(icon.classList.contains('locked')){
+            return
+        }
     })
 })
 backIcon.forEach((icon)=> {
+    let card = icon.parentElement.parentElement
     icon.addEventListener('click' , ()=>{
         if(icon.classList.contains('unlocked')){
             icon.classList.remove('unlocked')
-        }else{
+            icon.classList.add('locked')
+        }else if(icon.classList.contains('locked')){
             icon.classList.add('unlocked')
+            icon.classList.remove('locked')
+        }else if(icon.classList.contains('touchIcon')){
+            card.classList.remove('flipped')
         }
     })
 })
