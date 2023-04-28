@@ -105,6 +105,12 @@ hoverSection.forEach((section)=> {
 })
 
 frontIcon.forEach((icon)=> {
+    window.addEventListener('mousemove' , ()=>{
+        isTouch = false;
+    })
+    window.addEventListener('touchstart' , ()=>{
+        isTouch = true;
+    })
     let backIcon = icon.parentElement.parentElement.querySelector('.backCard .flipIcon')
     icon.addEventListener('click' , ()=>{
         let card = icon.parentElement.parentElement
