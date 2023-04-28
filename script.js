@@ -317,13 +317,13 @@ linkFocusOnScroll()
 ///////////////////////////////////////////portfolio funcs
 
 document.addEventListener('DOMContentLoaded' , ()=>{
-    let isTouch = false;
+    let isTouch;
     let console = document.getElementById('console')
     window.addEventListener('mousemove' , ()=>{
         isTouch = false;
         console.textContent = 'mouse'
     })
-    window.addEventListener('touchstart' , ()=>{
+    window.addEventListener('touchmove' , ()=>{
         isTouch = true;
         console.textContent = 'touch'
     })
