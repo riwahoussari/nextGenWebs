@@ -83,11 +83,8 @@ input[type=number] {
     color: var(--input-color-two);
     box-shadow: 0px 0px 5px var(--input-color-two);
     transition: all 0.2s ease-in-out;
-}.contact form button.hover{
-    color: var(--input-color);
-    border: 1px solid var(--input-color);
-    box-shadow: 0px 0px 5px var(--input-color);
-}
+} 
+
 /* info */
 .contactInfo{
     margin-top: 50px;
@@ -111,8 +108,6 @@ input[type=number] {
     justify-content: center;
 }.contactInfo a{
     color: unset;
-}.contact a:hover{
-    text-decoration: none;
 }.contact a:active{
     color: var(--turquoise);
 }
@@ -132,5 +127,14 @@ input[type=number] {
     }
     .contact form button{
         font-size: 1.3rem;
+    }
+}
+@media (hover : hover) {
+    .contact form button:hover{
+        color: var(--input-color);
+        border: 1px solid var(--input-color);
+        box-shadow: 0px 0px 5px var(--input-color);
+    }.contact a:hover{
+    text-decoration: none;
     }
 }

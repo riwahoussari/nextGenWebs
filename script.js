@@ -1,13 +1,3 @@
-let isTouch = null;
-let consolee = document.getElementById('console')
-window.addEventListener('pointerover' , ()=>{
-    isTouch = false;
-    consolee.textContent = 'mouse'
-})
-window.addEventListener('touchmove' , ()=>{
-    isTouch = true;
-    consolee.textContent = 'touch'
-})
 ///////////////////////////////////////////header funcs
 // navbar display 
 const burger = document.querySelector('.burgerMenu')
@@ -82,81 +72,53 @@ function hideNav(){
 
 ///////////////////////////////////////////services funcs
 // service card flipping
+
 const hoverSection = document.querySelectorAll('.hoverSection')
 const frontIcon = document.querySelectorAll('.frontCard .flipIcon')
 const backIcon = document.querySelectorAll('.backCard .flipIcon')
-const unlocked = document.querySelectorAll('.backCard .unlocked')
 const backOrder = document.querySelectorAll('.backCard a')
 hoverSection.forEach((section)=> {
     section.addEventListener('mouseenter' , ()=>{
         let card = section.parentElement
         let icon = card.querySelector('.backCard .flipIcon')
-        if(!isTouch){
-            card.classList.add('flipped')
-            if(!icon.classList.contains('locked'))
-            icon.classList.add('unlocked')
-        }
+        card.classList.add('flipped')
+        icon.classList.add('touchIcon')
     })
-})
-hoverSection.forEach((section)=> {
+
     section.addEventListener('mouseleave' , ()=>{
         let card = section.parentElement
         let backIcon = section.parentElement.querySelector('.backCard .flipIcon')
-        if(!isTouch){
-            if(backIcon.classList.contains('unlocked')){
-                card.classList.remove('flipped')
-            }else return 
+        if(!backIcon.classList.contains('lock')){
+            card.classList.remove('flipped')
         }
     })
 })
 frontIcon.forEach((icon)=> {
-    let backIcon = icon.parentElement.parentElement.querySelector('.backCard .flipIcon')
     icon.addEventListener('click' , ()=>{
         let card = icon.parentElement.parentElement
+        let backIcon = card.querySelector('.backCard .flipIcon')
         card.classList.add('flipped')
-        if(isTouch){
-            backIcon.classList.add('touchIcon')
-            backIcon.classList.remove('locked')
-        }else{
-            backIcon.classList.add('locked')
-            backIcon.classList.remove('unlocked')
-            backIcon.classList.remove('touchIcon')
-        }
+        backIcon.classList.add('touchIcon')
+        backIcon.classList.add('lock')
     })
 })
 backIcon.forEach((icon)=> {
     icon.addEventListener('mouseenter', ()=>{
         let card = icon.parentElement.parentElement
-        if(!isTouch){
-            card.classList.add('flipped')
-        }
+        card.classList.add('flipped')
     })
-})
-backIcon.forEach((icon)=> {
+
     icon.addEventListener('mouseleave' , ()=>{
         let card = icon.parentElement.parentElement
-        if(!isTouch){
-            if(icon.classList.contains('unlocked')){
-                card.classList.remove('flipped')
-            }else return
-        }
+        if(!icon.classList.contains('lock')){
+            card.classList.remove('flipped')
+        }else return
     })
-})
-backIcon.forEach((icon)=> {
+
     icon.addEventListener('click' , ()=>{
-        if(icon.classList.contains('unlocked')){
-            icon.classList.add('locked')
-            icon.classList.remove('unlocked')
-            icon.classList.remove('touchIcon')
-        }else if(icon.classList.contains('locked')){
-            icon.classList.add('unlocked')
-            icon.classList.remove('locked')
-            icon.classList.remove('touchIcon')
-        }else if(icon.classList.contains('touchIcon')){
-            icon.classList.remove('unlocked')
-            icon.classList.remove('locked')
-            icon.parentElement.parentElement.classList.remove('flipped')
-        }
+        let card = icon.parentElement.parentElement
+        card.classList.remove('flipped')
+        icon.classList.remove('lock')
     })
 })
 backOrder.forEach((order)=> {
@@ -164,18 +126,18 @@ backOrder.forEach((order)=> {
         let card = order.parentElement.parentElement
         card.classList.add('flipped')
     })
-})
-backOrder.forEach((order)=> {
+
     order.addEventListener('mouseleave' , ()=>{
         let card = order.parentElement.parentElement
         let backIcon = order.parentElement.querySelector('.flipIcon')
-        if(!isTouch){ 
-            if(backIcon.classList.contains('unlocked')){
-                card.classList.remove('flipped')
-            }else return
-        }
+ 
+        if(!backIcon.classList.contains('lock')){
+            card.classList.remove('flipped')
+        }else return
+
     })
 })
+
 //order button functionality
 //1
 const orderLabelOne = document.querySelectorAll('.orderLabelOne')
@@ -362,57 +324,21 @@ let clickToPause = document.querySelector('.clickToPause')
 let portWebsCont = document.querySelector('.portWebsContainer')
 let portCards = document.querySelectorAll('.portWebsCard')
 clickToPause.addEventListener('click' , ()=>{
-    portWebsCont.classList.toggle('hover')
-    if(portWebsCont.classList.contains('hover')){
+    portWebsCont.classList.toggle('stopScroll')
+    if(portWebsCont.classList.contains('stopScroll')){
         clickToPause.textContent = 'Click to Unpause'
         clickToPause.classList.add('turquoise')
         clickToPause.classList.remove('purple')
         portCards.forEach((card) => {
-            card.classList.add('hover')
+            card.classList.add('cardHover')
         })
     }else{
         clickToPause.textContent = 'Click to Pause'
         clickToPause.classList.add('purple')
         clickToPause.classList.remove('turquoise')
         portCards.forEach((card) => {
-            card.classList.remove('hover')
+            card.classList.remove('cardHover')
         })
     }
 })
 
-//add hover class for buttons
-//cancel hover for touchscreens
-
-
-let buttons = document.querySelectorAll('.hovers')
-// buttons.forEach((button)=>{
-//     button.addEventListener('mouseenter' , ()=>{
-//         console.log(isTouch)
-//         if(!isTouch){
-//             button.classList.add('hover')
-//         }
-//     })
-//     button.addEventListener('mouseleave' , ()=>{
-//         if(!isTouch){
-//             button.classList.remove('hover')
-//         }
-//     })
-// })
-buttons.forEach((button)=>{
-    button.addEventListener('mouseenter' , ()=>{
-        button.classList.add('hover')
-    })
-    button.addEventListener('touchStart' , ()=>{
-        button.classList.add('hover')
-    })
-
-    button.addEventListener('mouseleave' , ()=>{
-        button.classList.remove('hover')
-    })
-    button.addEventListener('touchcancel' , ()=>{
-        button.classList.remove('hover')
-    })
-    button.addEventListener('touchend' , ()=>{
-        button.classList.remove('hover')
-    })
-})

@@ -1,9 +1,9 @@
+
 header{
     width: 100%;
     padding: 0 5vw;
-    /* box-shadow: 0px 0px 7px var(--mid-gray); */
     background-color: var(--purple);
-    
+    box-shadow: 0px 0px 7px black;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,9 +57,6 @@ header .themeButton{
     background-size: cover;
     background-color: #00000000;
     transition: transform 0.3s ease-in-out
-}.themeButton.hover{
-    transform: rotate(-30deg);
-    opacity: 0.7;
 }
 .darkTheme .themeButton{
     background-image: url(./../assets/sunIcon.png);
@@ -78,8 +75,14 @@ header .themeButton{
     left: 0px;
     display: none;
     transition: opacity 0.3s ease-in-out;
-}.burgerMenu.hover{
-    opacity: 0.7;
+}
+@media (hover : hover) {
+    .themeButton:hover{
+        transform: rotate(-30deg);
+        opacity: 0.7;
+    }.burgerMenu:hover{
+        opacity: 0.7;
+    }
 }
 
 #header>.hideNav{

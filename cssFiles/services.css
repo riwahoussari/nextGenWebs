@@ -90,8 +90,9 @@
     right: 0;
     padding: 5px;
     border-top-right-radius: 15px;
-    /* border-bottom-left-radius: 5px; */
+    border-bottom-left-radius: 5px;
     background-size: cover;
+    z-index: 1;
 }.flipIcon:hover{
     background-color: rgba(0, 0, 0, 0.15);
     /* background-color: red; */
@@ -113,7 +114,6 @@
     margin: 10px 0 20px 0;
 }
 .services .container .card .frontCard>.list{ 
-    /* opacity: 0.7; */
     font-weight: 300;
     line-height: 1.4;
     position: absolute;
@@ -157,14 +157,21 @@
     background-color: var(--turquoise);
 }.services .container .card .backCard a{
     background-color: var(--purple);
-}.services .container .card .frontCard a.hover{
-    background-color: var(--purple);
-    box-shadow: inset 0px 0px 5px var(--mid-gray);
-}.services .container .card .backCard a.hover{
-    background-color: var(--turquoise);
-    box-shadow: inset 0px 0px 5px var(--mid-gray);
-}.lightTheme .services .container .card a.hover{
-    box-shadow: inset 0px 0px 5px rgb(100, 100, 100);
+}
+@media (hover : hover) {
+    .services .container .card .frontCard a:hover{
+        background-color: var(--purple);
+        box-shadow: inset 0px 0px 5px var(--mid-gray);
+    }.services .container .card .backCard a:hover{
+        background-color: var(--turquoise);
+        box-shadow: inset 0px 0px 5px var(--mid-gray);
+    }.lightTheme .services .container .card a:hover{
+        box-shadow: inset 0px 0px 5px rgb(100, 100, 100);
+    }.services .container .goldCard .frontCard a:hover{
+    box-shadow: inset 0px 0px 5px #daa520;
+    background-color: white;
+    color: #daa520;
+}
 }
 .services label{
     width: 100%;
@@ -186,10 +193,6 @@
 .services .container .goldCard .frontCard a{
     background-color: #daa520;
     box-shadow: none;
-}.services .container .goldCard .frontCard a.hover{
-    box-shadow: inset 0px 0px 5px #daa520;
-    background-color: white;
-    color: #daa520;
 }
 
 .services .hidden:nth-child(1){
