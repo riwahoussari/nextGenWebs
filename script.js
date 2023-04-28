@@ -1,6 +1,6 @@
 let isTouch = null;
 let consolee = document.getElementById('console')
-window.addEventListener('mousemove' , ()=>{
+window.addEventListener('pointerover' , ()=>{
     isTouch = false;
     consolee.textContent = 'mouse'
 })
