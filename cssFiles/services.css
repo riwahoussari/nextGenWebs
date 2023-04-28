@@ -90,17 +90,19 @@
     right: 0;
     padding: 5px;
     border-top-right-radius: 15px;
-    border-bottom-left-radius: 5px;
+    /* border-bottom-left-radius: 5px; */
     background-size: cover;
 }.flipIcon:hover{
     background-color: rgba(0, 0, 0, 0.15);
     /* background-color: red; */
 }.frontCard .flipIcon{
     background-image: url(./../assets/flipIcon.png);
-}.backCard .flipIcon{
+}.backCard .locked{
     background-image: url(./../assets/lockIcon.png);
 }.backCard .unlocked{
     background-image: url(./../assets/openLockIcon.png);
+}.backCard .touchIcon{
+    background-image: url(./../assets/flipIcon.png);
 }
 .services .container .card .frontCard img{
     max-width: 100px;
@@ -228,7 +230,10 @@
     left: 0;
     bottom: 40px;
     z-index: 1;
+    /* background-color: red; */
 }.smallHover{
+    /* background-color: palegoldenrod; */
+    border-top-left-radius: 15px;
     position: absolute;
     top: 0px;
     right: 35px;
