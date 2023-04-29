@@ -320,23 +320,44 @@ linkFocusOnScroll()
 
 
 //click to pause and unpause
-let clickToPause = document.querySelector('.clickToPause')
+let pauseWebs = document.querySelector('.pauseWebs')
 let portWebsCont = document.querySelector('.portWebsContainer')
-let portCards = document.querySelectorAll('.portWebsCard')
-clickToPause.addEventListener('click' , ()=>{
+let websCard = document.querySelectorAll('.portWebsCard')
+pauseWebs.addEventListener('click' , ()=>{
     portWebsCont.classList.toggle('stopScroll')
     if(portWebsCont.classList.contains('stopScroll')){
-        clickToPause.textContent = 'Click to Unpause'
-        clickToPause.classList.add('turquoise')
-        clickToPause.classList.remove('purple')
-        portCards.forEach((card) => {
+        pauseWebs.textContent = 'Click to Unpause'
+        pauseWebs.classList.add('turquoise')
+        pauseWebs.classList.remove('purple')
+        websCard.forEach((card) => {
             card.classList.add('cardHover')
         })
     }else{
-        clickToPause.textContent = 'Click to Pause'
-        clickToPause.classList.add('purple')
-        clickToPause.classList.remove('turquoise')
-        portCards.forEach((card) => {
+        pauseWebs.textContent = 'Click to Pause'
+        pauseWebs.classList.add('purple')
+        pauseWebs.classList.remove('turquoise')
+        websCard.forEach((card) => {
+            card.classList.remove('cardHover')
+        })
+    }
+})
+let pauseLogos = document.querySelector('.pauseLogos')
+let portLogosCont = document.querySelector('.portLogosContainer')
+let logosCard = document.querySelectorAll('.portLogosCard')
+pauseLogos.addEventListener('click' , ()=>{
+    portLogosCont.classList.toggle('stopScroll')
+    if(portLogosCont.classList.contains('stopScroll')){
+        pauseLogos.textContent = 'Click to Unpause'
+        pauseLogos.classList.add('turquoise')
+        pauseLogos.classList.remove('purple')
+        logosCard.forEach((card) => {
+            card.classList.add('cardHover')
+        })
+    }else{
+        pauseLogos.textContent = 'Click to Pause'
+        pauseLogos.classList.add('purple')
+        pauseLogos.classList.remove('turquoise')
+        logosCard.forEach((card) => {
             card.classList.remove('cardHover')
         })
     }

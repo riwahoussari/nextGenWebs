@@ -19,7 +19,7 @@
     color: var(--turquoise);
     font-size: 2rem;
     margin-bottom: 5px ;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .marquee{
     width: 100%;
@@ -57,7 +57,13 @@
     width: 80vw;
     display: flex;
     align-items: center;
-}.portWebsContainer.stopScroll,.portWebsContainer:hover, .portLogosContainer:hover{
+}.portLogosContainer{
+    animation: scrolling2 8s linear infinite;
+}
+.portWebsContainer.stopScroll,
+.portWebsContainer:hover, 
+.portLogosContainer.stopScroll,
+.portLogosContainer:hover{
     animation-play-state: paused;
 }
 .portWebsCard ,.portLogosCard{
@@ -92,8 +98,6 @@
     color: white;
     padding: 10px;
     z-index: 1;
-}.portfolio .pwc3::before{
-    padding: 0;
 }
 .portWebsCard .after ,.portLogosCard .after{
     content: "";
@@ -113,14 +117,11 @@
     /* font-size: 20px; */
     font-weight: bold;
 }
-.portWebsCard.cardHover .after,.portWebsCard:hover .after,.portLogosCard.cardHover .after{
+.portWebsCard.cardHover .after,
+.portLogosCard.cardHover .after{
     opacity: 0.7;
 }
-.pwc1::before{
-    content: 'Restaurant Menu Template';
-}.pwc2::before{
-    content: 'Clothing Shop Template';
-}
+
 .portfolio button{
     margin-top: 10px;
     padding: 7px 20px;
@@ -151,6 +152,10 @@
         border: 1px solid var(--purple);
         box-shadow: 0px 0px 5px var(--purple);
     }
+    .portWebsCard:hover .after,
+    .portLogosCard:hover .after{
+    opacity: 0.7;
+}
 }
 @keyframes scrolling {
     0%{
@@ -158,6 +163,14 @@
     }
     100%{
         transform: translateX(-990px);
+    }
+}
+@keyframes scrolling2 {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-1980px);
     }
 }
 @media (max-width: 990px) {
@@ -168,9 +181,12 @@
         font-size: 26px;
     }.portLogosCard{
         height: 210px;
-    }.portWebsContainer , .portLogosContainer{
+    }.portWebsContainer{
         animation: scrolling 4470ms linear infinite;
-    }.portWebsCard::before ,.portLogosCard::before{
+    }.portLogosContainer{
+        animation: scrolling2 8940ms linear infinite
+    }
+    .portWebsCard::before ,.portLogosCard::before{
         padding: 5px;
         font-size: 15px;
     }
@@ -180,6 +196,13 @@
         }
         100%{
             transform: translateX(-738px);
+        }
+    }@keyframes scrolling2 {
+        0%{
+            transform: translateX(0);
+        }
+        100%{
+            transform: translateX(-1476px);
         }
     }
 }
@@ -191,8 +214,10 @@
         font-size: 17.5px;
     }.portLogosCard{
         height: 140px;
-    }.portWebsContainer , .portLogosContainer{
+    }.portWebsContainer{
         animation: scrolling 3.3s linear infinite;
+    }.portLogosContainer{
+        animation: scrolling2 6.6s linear infinite;
     }.portWebsCard::before ,.portLogosCard::before{
         padding: 5px;
         font-size: 10px;
@@ -204,8 +229,36 @@
         100%{
             transform: translateX(-510px);
         }
+    }@keyframes scrolling2 {
+        0%{
+            transform: translateX(0);
+        }
+        100%{
+            transform: translateX(-1020px);
+        }
     }
     .portfolio button{
         font-size: 1rem;
     }
+}
+
+.pwc1::before{
+    content: 'Restaurant Menu Template';
+}.pwc2::before{
+    content: 'Clothing Shop Template';
+}.pwc3::before{
+    padding: 0;
+}
+.plc1::before{
+    content: 'Digital Gurus No1';
+}.plc2::before{
+    content: 'Digital Gurus No2';
+}.plc3::before{
+    content: 'Digital Gurus No3';
+}.plc4::before{
+    content: 'MK clothing shop Logo';
+}.plc5::before{
+    content: 'W Logo';
+}.plc6::before{
+    padding: 0;
 }
