@@ -4,6 +4,7 @@
     background-color: white;
     z-index: 100;
     position: fixed;
+    animation: load 1500ms;
 }.logoCanvas{
     display: flex;
     align-items: end;
@@ -22,27 +23,31 @@
     width: min(140px , 20vw);
     aspect-ratio: 22/31;
     background-image: url(../assets/digguD.png);
-    animation: loadD 2200ms ease-in-out infinite;
+    animation: loadD 1500ms ease-in-out infinite;
 }
 #digguI{
     aspect-ratio: 8/17;
     background-image: url(../assets/digguI.png);
-    animation: loadI 2200ms ease-in-out infinite;
+    animation: loadI 1500ms ease-in-out infinite;
 }
 #digguG{
     aspect-ratio: 8/17;
     background-image: url(../assets/digguG.png);
 }
 .preloader .logoCanvas div:nth-child(3){
-    animation: loadG 2200ms ease-in-out infinite;
+    animation: loadG 1500ms ease-in-out infinite;
 }.preloader .logoCanvas div:nth-child(4){
-    animation: loadGG 2200ms ease-in-out infinite;
+    animation: loadGG 1500ms ease-in-out infinite;
 }
 #digguU{
     aspect-ratio: 8/17;
     background-image: url(../assets/digguU.png);
-    animation: loadU 2200ms ease-in-out infinite;
-
+    animation: loadU 1500ms ease-in-out infinite;
+}
+@keyframes load{
+    50%{
+        background-color: white;
+    }
 }
 @keyframes loadD {
     22%{

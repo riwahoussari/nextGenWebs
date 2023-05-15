@@ -1,5 +1,7 @@
 window.addEventListener('load' , ()=>{
-    document.querySelector('.preloader').style.display = 'none'
+    window.addEventListener('animationend' , ()=>{
+        document.querySelector('.preloader').style.display = 'none'
+    })
 })
 ///////////////////////////////////////////header funcs
 // navbar display 
