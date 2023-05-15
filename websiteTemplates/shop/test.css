@@ -455,6 +455,8 @@
     }
     .modal .h2PriceWrap{
         padding-right: 5px;
+        flex-direction: column;
+        align-items: start;
     }
     .wrapperOne{
         display: grid;
@@ -472,6 +474,9 @@
         grid-area: about;
     }.shoeSizeContainer{
         grid-area: size;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
     }
     .modal h1{
         font-size:20;
@@ -486,12 +491,25 @@
     .modal h3{
         font-size: 13px;
         margin: 0;
-    }    
+    }.modalPrice{
+        font-size: 15px;
+        margin-top: 5px;
+    }.modal select{
+        font-size: 13px;
+        margin-top: 5px;
+    }  
     .modal p{
         font-size: 10px;
     }
     .modal .relatedItem{
         aspect-ratio: 5/3;
+    }.modal .showLess{
+        border-top-right-radius: 100%; border-bottom-left-radius: 100% ;
+        border-radius: 100%;
+        transform: translate(40% , -40%);
+        z-index: 10;
+        background-color: black;
+        color: white;
     }
 }
 @media (max-width: 435px) {

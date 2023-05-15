@@ -222,6 +222,11 @@ function displayModal(button){
         bodyBefore.style.bottom = 'unset'
         document.body.style.overflow = 'unset'
     })
+    bodyBefore.addEventListener('click' , ()=>{
+        modal.style.display = 'none'
+        bodyBefore.style.bottom = 'unset'
+        document.body.style.overflow = 'unset'
+    })
 }
 function iterateModal(totCard, FA, FA1, imgOne, imgThree , imgTwo, modal, relImg1, relImg2, relImg3){
     imgOne.style.backgroundImage = `url('assets/${FA[0]}/${FA[0]+"-"+(FA1)}/imgOne.png')`

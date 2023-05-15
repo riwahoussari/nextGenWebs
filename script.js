@@ -1,3 +1,6 @@
+window.addEventListener('load' , ()=>{
+    document.querySelector('.preloader').style.display = 'none'
+})
 ///////////////////////////////////////////header funcs
 // navbar display 
 const burger = document.querySelector('.burgerMenu')
@@ -362,4 +365,5 @@ pauseLogos.addEventListener('click' , ()=>{
         })
     }
 })
+
 
