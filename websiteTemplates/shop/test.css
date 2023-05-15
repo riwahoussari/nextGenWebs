@@ -284,14 +284,15 @@
     font-size: min(2.5vw,30px);
     width: min(4vw,40px);
     height: min(4vw,40px);
-    border: 1px solid black;
     transition: all 150ms ease-in-out;
 }
 .modal{
-    width: 90%;
-    max-width: 1200px ;
-    max-height: 90vh;
-    aspect-ratio: 4/3;
+    /* width: 70%; */
+    /* max-width: 1200px ; */
+    /* max-height: 95vh; */
+    /* aspect-ratio: 4/3; */
+    width: 90vw;
+    height: min(60vw , 90vh);
 
     padding: max(2vw,20px);
     display: grid;
@@ -343,9 +344,15 @@
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
+    height: 100%;
+}.wrapperOne{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 .modal h1{
-    font-size: min(4.5vw,45px);
+    font-size: max(3.5vw,20px);
     line-height: 1;
 }
 .modal .h2PriceWrap{
@@ -354,15 +361,20 @@
     align-items: center;
     margin-top: min(0.5vw,5px);
 }.modal h2{
-    font-size: min(2.5vw,25px);
+    font-size: max(2.5vw,10px);
     font-weight: 400;
-}.modalPrice{
+}.modal h3{
+    font-size: max(1.8vw , 7px);
+    font-weight: 600;
+    margin-top: 1vh
+}
+.modalPrice{
     border: 1px solid black;
     border-radius: 50px;
-    font-size: min(2.3vw,23px);
+    font-size: max(2vw,8px);
     font-weight: 700;
     color: white;
-    -webkit-text-stroke: #000 2px;
+    -webkit-text-stroke: #000 max(0.1vw,1px);
     letter-spacing: 2px;
     text-shadow:
         2px 2px 0 #000,
@@ -391,7 +403,7 @@
 }
 .aboutProduct{
     width: 95%;
-    margin: min(1.3vw,13px) 0;
+    /* margin: min(1.3vw,13px) 0 0 0; */
 }.aboutProduct p{
     font-weight: 500;
     font-size: min(1.8vw,18px);
@@ -433,63 +445,53 @@
 }
 @media (max-width: 768px) {
     .modal{
-        width: 90%;
-        aspect-ratio: 3/4;
+        width: min(90vw,60vh);
+        height: 90vh;
         grid-template-columns: unset;
-        grid-template-rows: 50% 50%;
+        grid-template-rows: 60% 40%;
         grid-template-areas: 'imgcv' 'txtcv';
-        gap: 0;
+        gap: 2%;
+        padding: 10px;
     }
-    .mainImg{
-        top: 0;
-        right: 34.5%;
-        bottom: 0;
-        left: 0;
-    }.leftImg{
-        top: 0;
-        right: 0;
-        bottom: 52.5%;
-        left: 67.5%;
-    }.rightImg{
-        top: 52.5%;
-        right: 0;
-        bottom: 0;
-        left: 67.5%;
-    }.modal .imgCanvas{
-        grid-area: imgcv;
-    }
-    .modal .textCanvas{
-        grid-area: txtcv;
-        display: grid;
-        grid-template-rows: 50% 50%;
-        grid-template-areas: 'wr1' 'wr2';
+    .modal .h2PriceWrap{
+        padding-right: 5px;
     }
     .wrapperOne{
-        grid-area: wr1;
         display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: 'mnTx abTx' 'slct abTx';
+        grid-template-areas: 
+        'mntxt size'        
+        'about about'
+        'rel rel'
+        ;
+        grid-template-columns: 60% 40%;
     }.wrapperTwo{
-        grid-area: wr2;
+        grid-area: rel;
+    }.mainText{
+        grid-area: mntxt;
+    }.aboutProduct{
+        grid-area: about;
+    }.shoeSizeContainer{
+        grid-area: size;
     }
-    .mainText{
-        grid-area: mnTx;
-        display: flex;
-        flex-direction: column;
-    }.modalPrice{
-        margin-right: 2vw;
+    .modal h1{
+        font-size:20;
     }
-    .shoeSizeContainer{
-        grid-area: slct;
-        align-self: end;
-    }.modal select{
-        margin-bottom: 0;
+    .modal h2{
+        font-size: 15px;
+        line-height: 1;
     }
-    .aboutProduct{
-        grid-area: abTx;
-        font-size: min(2.5vw,25px);
+    .modal .price{
+        font-size: 13px;
+    }
+    .modal h3{
+        font-size: 13px;
         margin: 0;
+    }    
+    .modal p{
+        font-size: 10px;
+    }
+    .modal .relatedItem{
+        aspect-ratio: 5/3;
     }
 }
 @media (max-width: 435px) {
